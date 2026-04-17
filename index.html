@@ -357,7 +357,7 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 // ─────────────────────────────────────────────────────────────
 //  CONFIGURACIÓN  — Reemplaza con la URL de tu Apps Script
 // ─────────────────────────────────────────────────────────────
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbx2OS1jkmjYzjOKve0bhHWowYl0KS8EXCoM0RgBJ0sofW45nfXxk0_Dhn00zBxvwIma/exec";  // <── REEMPLAZAR DESPUÉS DE CONFIGURAR
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbx2OS1jkmjYzjOKve0bhHWowYl0KS8EXCoM0RgBJ0sofW45nfXxk0_Dhn00zBxvwIma/exec";
 
 // ─────────────────────────────────────────────────────────────
 //  DATOS (JSON embebido)
@@ -608,6 +608,15 @@ function calcularResultado(){
 async function enviarASheets(r){
   if(!SHEET_URL||SHEET_URL==="TU_URL_AQUI") return;
   try{
+    // Construir detalle de cada respuesta
+    const detalle_respuestas = r.detalle.map(item => ({
+      num: item.num,
+      tema: item.tema,
+      pregunta: item.pregunta,
+      respuesta_usuario: item.ua + ") " + item.txtUsr,
+      respuesta_correcta: item.uc + ") " + item.txtCor,
+      resultado: item.correcto ? "CORRECTA" : "INCORRECTA"
+    }));
     await fetch(SHEET_URL,{
       method:"POST", mode:"no-cors",
       headers:{"Content-Type":"application/json"},
@@ -615,7 +624,8 @@ async function enviarASheets(r){
         nombre:r.nombre, tipo_documento:r.tipoDoc, documento:r.doc,
         telefono:r.telefono, cargo:r.cargo, modalidad:r.modalidad,
         total:r.total, correctas:r.ok, porcentaje:r.pct, nota:r.nota,
-        tiempo_min:r.mins, fecha:r.fecha
+        tiempo_min:r.mins, fecha:r.fecha,
+        detalle_respuestas: detalle_respuestas
       })
     });
   }catch(e){ console.warn("Sheets error",e); }
