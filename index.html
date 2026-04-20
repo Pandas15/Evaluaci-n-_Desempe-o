@@ -471,7 +471,7 @@ input[style*="uppercase"],select{text-transform:uppercase}
 // ============================================================
 //  CONFIGURACIÓN
 // ============================================================
-const SHEET_URL = "TU_URL_AQUI"; // Pega aquí la URL de tu Apps Script
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbx4Tu7I2E2p-r_U7myrjrVkvQNUwsVLrZmhLiVraxBnJ2AcJJo1tNf1hw9_PL2bz86mkQ/exec"; // URL de Apps Script configurada
 
 // ============================================================
 //  COMPETENCIAS Y 27 INDICADORES (del formato PDF)
@@ -971,7 +971,10 @@ async function enviarASheets(){
   }
   const d = APP.desempeno;
   const q = APP.quiz;
-  const payload = {
+
+  // --- Payload principal (Hoja: Evaluaciones) ---
+  const payloadPrincipal = {
+    accion:          "evaluacion",
     fecha:           d.fecha,
     nombre:          APP.nombre,
     tipo_documento:  APP.tipoDoc,
@@ -992,24 +995,43 @@ async function enviarASheets(){
     // Conocimiento
     quiz_total:      q.total,
     quiz_correctas:  q.ok,
+    quiz_incorrectas:(q.detalle||[]).filter(i=>!i.correcto).length,
     quiz_porcentaje: q.pct,
     quiz_nota:       q.nota,
-    quiz_tiempo_min: q.mins,
-    // Detalle quiz
-    detalle_respuestas: (q.detalle||[]).map(item=>({
-      num: item.num, tema: item.tema, pregunta: item.pregunta,
-      respuesta_usuario: item.ua+") "+item.txtUsr,
-      respuesta_correcta: item.uc+") "+item.txtCor,
-      resultado: item.correcto?"CORRECTA":"INCORRECTA"
-    }))
+    quiz_tiempo_min: q.mins
   };
 
+  // --- Payload detalle preguntas (Hoja: Detalle_Preguntas) ---
+  const detalleFilas = (q.detalle||[]).map(item=>({
+    accion:            "detalle_pregunta",
+    fecha:             d.fecha,
+    nombre:            APP.nombre,
+    documento:         APP.doc,
+    cargo:             APP.cargo,
+    modalidad:         APP.modalidad,
+    num_pregunta:      item.num,
+    tema:              item.tema,
+    pregunta:          item.pregunta,
+    respuesta_usuario: item.ua+") "+item.txtUsr,
+    respuesta_correcta:item.uc+") "+item.txtCor,
+    resultado:         item.correcto?"CORRECTA":"INCORRECTA"
+  }));
+
   try{
+    // Enviar resumen principal
     await fetch(SHEET_URL,{
       method:"POST", mode:"no-cors",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(payload)
+      body:JSON.stringify(payloadPrincipal)
     });
+    // Enviar cada pregunta como fila separada
+    for(const fila of detalleFilas){
+      await fetch(SHEET_URL,{
+        method:"POST", mode:"no-cors",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(fila)
+      });
+    }
   } catch(e){
     console.warn("Error enviando a Sheets:",e);
   }
@@ -1038,7 +1060,7 @@ async function guardarYFinalizar(){
 
   const st = document.getElementById("sheets-status");
   st.style.display="flex";
-  if(!SHEET_URL||SHEET_URL==="https://script.google.com/macros/s/AKfycbzxSyJXAupbL0UX7Sdt3FYA6xv4VW-SmpshWAFW5FcDXMpY-2CfdXNDugW-OK5uoNQf/exec"){
+  if(!SHEET_URL||SHEET_URL==="TU_URL_AQUI"){
     document.getElementById("sheets-status-txt").textContent = "⚠️ Recuerda configurar la URL de Google Sheets en el archivo HTML (busca: TU_URL_AQUI).";
   } else {
     st.className="alert alert-green";
