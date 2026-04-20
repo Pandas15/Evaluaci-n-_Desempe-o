@@ -3,203 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación de Desempeño EIH & EIC | ICBF</title>
+<title>Evaluación Integral | Talento Humano EIH & EIC</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(160deg,#006B2B 0%,#009B3A 45%,#00B347 100%);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:20px 16px 40px}
-@media(max-width:480px){body{padding:16px 12px 30px}}
-.screen{display:none;width:100%;max-width:760px;animation:fadeIn .4s ease}
+@media(max-width:480px){body{padding:12px 10px 30px}}
+.screen{display:none;width:100%;max-width:800px;animation:fadeIn .4s ease}
 .screen.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slideIn{from{opacity:0;transform:translateX(36px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes spin{to{transform:rotate(360deg)}}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 
 /* CARD */
-.card{background:#fff;border-radius:20px;padding:40px;box-shadow:0 24px 64px rgba(0,0,0,.18)}
-@media(max-width:768px){.card{padding:30px 20px}}
-@media(max-width:520px){.card{padding:20px 16px}}
+.card{background:#fff;border-radius:20px;padding:36px;box-shadow:0 24px 64px rgba(0,0,0,.18)}
+@media(max-width:768px){.card{padding:24px 18px}}
+@media(max-width:480px){.card{padding:18px 14px}}
 
 /* HEADER */
-.app-header{text-align:center;margin-bottom:32px}
-.logo-wrap{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#009B3A,#00C44E);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,155,58,.3)}
-.logo-wrap span{font-size:42px}
-.app-header h1{color:#009B3A;font-size:1.75rem;font-weight:800;margin-bottom:6px}
-.app-header p{color:#666;font-size:.93rem;line-height:1.5;margin:0}
-.subtitle-badge{display:inline-block;background:#E8F5E9;color:#009B3A;border-radius:20px;padding:4px 14px;font-size:.78rem;font-weight:700;margin-bottom:12px;letter-spacing:.5px}
-@media(max-width:768px){.app-header h1{font-size:1.4rem}.app-header p{font-size:.85rem}}
-@media(max-width:480px){.app-header h1{font-size:1.2rem}.app-header p{font-size:.8rem}}
+.app-header{text-align:center;margin-bottom:28px}
+.logos-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:10px}
+.logos-row img{height:64px;width:auto;object-fit:contain}
+.logos-row .title-center{flex:1;text-align:center}
+.app-header h1{color:#009B3A;font-size:1.6rem;font-weight:800;margin-bottom:6px}
+.app-header p{color:#666;font-size:.9rem;line-height:1.5}
+@media(max-width:480px){.logos-row img{height:46px}.app-header h1{font-size:1.25rem}}
+.badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.4px;margin-bottom:10px}
+.badge-green{background:#E8F5E9;color:#009B3A}
+.badge-blue{background:#E3F2FD;color:#1565C0}
+.badge-orange{background:#FFF3E0;color:#E65100}
+@media(max-width:480px){.app-header h1{font-size:1.25rem}}
 
 /* DIVIDER */
-.divider{height:1px;background:#F0F0F0;margin:24px 0}
-
-/* FEATURE LIST */
-.feature-list{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
-.feature-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#F8FDF9;border-radius:10px;border:1px solid #E0F0E6}
-.feature-icon{font-size:1.4rem;min-width:30px}
-.feature-text{font-size:.9rem;color:#444;line-height:1.4}
-.feature-text strong{color:#009B3A}
+.divider{height:1px;background:#F0F0F0;margin:20px 0}
 
 /* FORM */
-.form-group{margin-bottom:18px}
-label{display:block;font-weight:700;margin-bottom:6px;color:#333;font-size:.88rem;letter-spacing:.3px}
-input,select{width:100%;padding:13px 16px;border:2px solid #E0E0E0;border-radius:12px;font-size:.97rem;transition:all .2s;color:#333;background:#fff;appearance:none;-webkit-appearance:none;text-transform:uppercase}
-input:focus,select:focus{outline:none;border-color:#009B3A;box-shadow:0 0 0 3px rgba(0,155,58,.1)}
-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23009B3A' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:16px}
+label{display:block;font-weight:700;margin-bottom:5px;color:#333;font-size:.85rem;letter-spacing:.3px}
+input,select,textarea{width:100%;padding:12px 14px;border:2px solid #E0E0E0;border-radius:12px;font-size:.95rem;transition:all .2s;color:#333;background:#fff}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#009B3A;box-shadow:0 0 0 3px rgba(0,155,58,.1)}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23009B3A' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:38px}
+textarea{resize:vertical;min-height:80px;font-family:inherit}
+input[style*="uppercase"],select{text-transform:uppercase}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:480px){.form-row{grid-template-columns:1fr}}
 
-/* INFO BOX */
-.info-box{background:#FFF8E1;border:1.5px solid #FFD54F;border-radius:12px;padding:13px 16px;font-size:.86rem;color:#5D4037;margin-bottom:18px;display:flex;align-items:flex-start;gap:10px}
-.info-box .icon{font-size:1.1rem;min-width:20px}
-.info-box-green{background:#E8F5E9;border-color:#A5D6A7;color:#1B5E20}
+/* PHASE INDICATOR */
+.phase-bar{display:flex;gap:8px;margin-bottom:24px}
+.phase-step{flex:1;padding:8px 10px;border-radius:10px;text-align:center;font-size:.75rem;font-weight:700;border:2px solid #E0E0E0;color:#AAA;background:#FAFAFA;transition:all .3s}
+.phase-step.done{border-color:#009B3A;background:#E8F5E9;color:#009B3A}
+.phase-step.active{border-color:#009B3A;background:#009B3A;color:#fff}
+.phase-step span{display:block;font-size:1.1rem;margin-bottom:2px}
+
+/* PROGRESS */
+.progress-wrap{margin-bottom:20px}
+.progress-meta{display:flex;justify-content:space-between;margin-bottom:6px;font-size:.8rem;color:#777;font-weight:600}
+.progress-bar{height:8px;background:#E8F5E9;border-radius:5px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#009B3A,#F7A800);border-radius:5px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+/* COMPETENCIA BLOCK */
+.comp-block{margin-bottom:20px;border:2px solid #E8F5E9;border-radius:14px;overflow:hidden}
+.comp-header{background:linear-gradient(90deg,#E8F5E9,#F1FBF4);padding:12px 16px;display:flex;align-items:center;gap:10px;cursor:default}
+.comp-header .comp-emoji{font-size:1.4rem}
+.comp-header .comp-title{font-weight:800;color:#1B5E20;font-size:.95rem;flex:1}
+.comp-header .comp-score{font-size:.8rem;font-weight:700;color:#009B3A;background:#fff;padding:4px 10px;border-radius:20px;border:1.5px solid #009B3A;min-width:70px;text-align:center}
+.comp-body{padding:0}
+
+/* INDICATOR ROW */
+.ind-row{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid #F5F5F5;transition:background .15s}
+.ind-row:last-child{border-bottom:none}
+.ind-row:hover{background:#FAFFF9}
+.ind-num{min-width:22px;height:22px;border-radius:50%;background:#E8F5E9;color:#009B3A;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ind-text{flex:1;font-size:.82rem;color:#333;line-height:1.4}
+.likert{display:flex;gap:4px;flex-shrink:0}
+.lk-btn{width:34px;height:34px;border:2px solid #E0E0E0;border-radius:8px;background:#FAFAFA;font-size:.75rem;font-weight:700;cursor:pointer;color:#999;transition:all .15s;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.lk-btn:hover{border-color:#009B3A;background:#F1FBF4;color:#009B3A;transform:scale(1.08)}
+.lk-btn.selected{border-color:#009B3A;background:#009B3A;color:#fff;transform:scale(1.08)}
+.lk-btn.selected.val-1{background:#E53935;border-color:#E53935}
+.lk-btn.selected.val-2{background:#FF7043;border-color:#FF7043}
+.lk-btn.selected.val-3{background:#FFA000;border-color:#FFA000}
+.lk-btn.selected.val-4{background:#43A047;border-color:#43A047}
+.lk-btn.selected.val-5{background:#1B5E20;border-color:#1B5E20}
+.lk-label{font-size:.58rem;margin-top:1px;white-space:nowrap}
+@media(max-width:520px){.lk-btn{width:28px;height:28px;font-size:.65rem}.lk-label{display:none}.ind-text{font-size:.78rem}}
+@media(max-width:380px){.lk-btn{width:24px;height:24px}}
+
+/* SCORE BOX */
+.score-live{background:linear-gradient(135deg,#E8F5E9,#DCEDC8);border-radius:14px;padding:14px 20px;display:flex;align-items:center;gap:14px;margin-bottom:20px;border:2px solid #A5D6A7}
+.score-live .big-num{font-size:2.2rem;font-weight:900;color:#1B5E20;line-height:1}
+.score-live .score-info{flex:1}
+.score-live .score-label{font-size:.78rem;color:#555;margin-bottom:2px}
+.score-live .score-level{font-size:.88rem;font-weight:800;padding:3px 10px;border-radius:20px;display:inline-block}
+.level-sobre{background:#1B5E20;color:#fff}
+.level-sat{background:#F7A800;color:#fff}
+.level-nosat{background:#E53935;color:#fff}
+.level-pending{background:#CCC;color:#fff}
+
+/* LEGEND */
+.likert-legend{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;background:#F5F5F5;border-radius:10px;padding:10px 14px}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:.72rem;color:#555}
+.legend-dot{width:20px;height:20px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:#fff;flex-shrink:0}
+
+/* QUIZ */
+.q-topic-badge{display:inline-flex;align-items:center;gap:5px;background:#E8F5E9;color:#009B3A;border-radius:20px;padding:5px 13px;font-size:.75rem;font-weight:700;margin-bottom:12px;letter-spacing:.3px}
+.q-text{font-size:1.05rem;color:#1A1A1A;line-height:1.65;margin-bottom:22px;font-weight:500}
+.options{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border:2.5px solid #E8E8E8;border-radius:14px;cursor:pointer;transition:all .2s;background:#fff}
+.opt:hover{border-color:#009B3A;background:#F9FFF9;transform:translateX(3px)}
+.opt.selected{border-color:#009B3A;background:#E8F5E9}
+.opt.correct{border-color:#009B3A;background:#E8F5E9;pointer-events:none}
+.opt.wrong{border-color:#E53935;background:#FFEBEE;pointer-events:none}
+.opt-letter{min-width:30px;height:30px;border-radius:50%;background:#F0F0F0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0;transition:all .2s}
+.opt.selected .opt-letter{background:#009B3A;color:#fff}
+.opt.correct .opt-letter{background:#009B3A;color:#fff}
+.opt.wrong .opt-letter{background:#E53935;color:#fff}
+.opt-text{font-size:.9rem;color:#333;line-height:1.4;flex:1;text-transform:uppercase}
+.q-actions{margin-top:18px;display:flex;justify-content:flex-end}
+.q-feedback{margin-top:12px;padding:10px 14px;border-radius:10px;font-size:.83rem;line-height:1.5}
+.q-feedback.ok{background:#E8F5E9;color:#1B5E20;border:1px solid #A5D6A7}
+.q-feedback.no{background:#FFEBEE;color:#B71C1C;border:1px solid #FFCDD2}
 
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;width:100%;letter-spacing:.3px}
-@media(max-width:480px){.btn{padding:12px 16px;font-size:.9rem}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border:none;border-radius:12px;font-size:.97rem;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px}
+.btn-full{width:100%}
 .btn-primary{background:linear-gradient(135deg,#009B3A,#00C44E);color:#fff;box-shadow:0 4px 16px rgba(0,155,58,.25)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,155,58,.38)}
 .btn-primary:disabled{background:#CCC;cursor:not-allowed;transform:none;box-shadow:none}
 .btn-secondary{background:#fff;color:#009B3A;border:2.5px solid #009B3A}
 .btn-secondary:hover{background:#F0FFF4}
-.btn-sm{padding:10px 20px;font-size:.88rem;width:auto}
+.btn-sm{padding:10px 18px;font-size:.88rem}
 
-/* PROGRESS */
-.progress-wrap{margin-bottom:24px}
-.progress-meta{display:flex;justify-content:space-between;margin-bottom:8px;font-size:.82rem;color:#777;font-weight:600}
-.progress-bar{height:9px;background:#E8F5E9;border-radius:5px;overflow:hidden}
-.progress-fill{height:100%;background:linear-gradient(90deg,#009B3A,#F7A800);border-radius:5px;transition:width .5s cubic-bezier(.4,0,.2,1)}
-
-/* QUESTION */
-.q-topic{display:inline-flex;align-items:center;gap:6px;background:#E8F5E9;color:#009B3A;border-radius:20px;padding:5px 14px;font-size:.78rem;font-weight:700;margin-bottom:14px;letter-spacing:.3px}
-.q-text{font-size:1.07rem;color:#1A1A1A;line-height:1.65;margin-bottom:26px;font-weight:500}
-.options{display:flex;flex-direction:column;gap:11px}
-.opt{display:flex;align-items:flex-start;gap:14px;padding:15px 18px;border:2.5px solid #E8E8E8;border-radius:14px;cursor:pointer;transition:all .2s;background:#fff}
-.opt:hover{border-color:#009B3A;background:#F9FFF9;transform:translateX(3px)}
-.opt.selected{border-color:#009B3A;background:#E8F5E9}
-.opt.correct{border-color:#009B3A;background:#E8F5E9;pointer-events:none}
-.opt.incorrect{border-color:#C62828;background:#FFEBEE;pointer-events:none}
-.opt.show-correct{border-color:#009B3A;background:#E8F5E9;pointer-events:none}
-.opt-letter{min-width:34px;height:34px;border-radius:50%;background:#F5F5F5;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.84rem;color:#555;transition:all .2s;flex-shrink:0}
-.opt.selected .opt-letter{background:#009B3A;color:#fff}
-.opt.correct .opt-letter{background:#009B3A;color:#fff}
-.opt.incorrect .opt-letter{background:#C62828;color:#fff}
-.opt.show-correct .opt-letter{background:#009B3A;color:#fff}
-.opt-text{font-size:.93rem;color:#333;line-height:1.5;padding-top:4px}
-@media(max-width:480px){.q-text{font-size:1rem;margin-bottom:18px}.opt{padding:12px 14px;gap:10px}.opt-text{font-size:.88rem}}
-.q-actions{margin-top:24px;display:flex;gap:10px;justify-content:flex-end}
-
-/* SCORE CIRCLE */
-.score-wrap{display:flex;justify-content:center;margin:8px 0 24px}
-.score-circle{position:relative;width:170px;height:170px}
-.score-circle svg{transform:rotate(-90deg)}
-.score-inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
-.score-main{font-size:2.4rem;font-weight:900;color:#009B3A;line-height:1}
-.score-sub{font-size:.78rem;color:#999;margin-top:2px}
-@media(max-width:480px){.score-circle{width:140px;height:140px}.score-main{font-size:2rem}}
-
-/* STATS */
-.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
-.stat-box{background:#F8F8F8;border-radius:12px;padding:14px 10px;text-align:center}
-.stat-num{font-size:1.6rem;font-weight:900;line-height:1.1}
-.stat-lbl{font-size:.72rem;color:#888;margin-top:3px;font-weight:600;letter-spacing:.3px}
-@media(max-width:480px){.stat-box{padding:10px 8px}.stat-num{font-size:1.3rem}.stat-lbl{font-size:.65rem}}
-
-/* RESULT BADGE */
-.result-badge{border-radius:12px;padding:13px 18px;margin-bottom:20px;font-weight:700;font-size:.97rem;text-align:center}
-.badge-excelente{background:#E8F5E9;color:#1B5E20}
-.badge-bien{background:#E3F2FD;color:#0D47A1}
-.badge-basico{background:#FFF8E1;color:#E65100}
-.badge-bajo{background:#FFEBEE;color:#B71C1C}
-
-/* REVIEW */
-.review-item{padding:15px;border-radius:12px;margin-bottom:10px;border-left:4px solid transparent}
-.review-item.ok{background:#F0FFF4;border-left-color:#009B3A}
-.review-item.fail{background:#FFF5F5;border-left-color:#C62828}
-.review-q{font-weight:600;font-size:.88rem;color:#222;margin-bottom:7px;line-height:1.45}
-.review-a{font-size:.83rem;color:#555;line-height:1.5}
-.tag{display:inline-block;padding:2px 9px;border-radius:10px;font-size:.72rem;font-weight:700;margin-right:6px}
-.tag-ok{background:#C8E6C9;color:#1B5E20}
-.tag-fail{background:#FFCDD2;color:#B71C1C}
-
-/* LOGO CONTAINER */
-.logo-container{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:24px;flex-wrap:wrap}
-.logo-container img{height:56px;width:auto;object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,155,58,.12);transition:transform .3s ease}
-.logo-container img:hover{transform:scale(1.05)}
-@media(max-width:768px){.logo-container{gap:18px;margin-bottom:18px}.logo-container img{height:48px}}
-@media(max-width:480px){.logo-container{gap:14px;margin-bottom:16px}.logo-container img{height:42px}}
-
-/* TIMER */
-.timer{position:fixed;top:14px;right:14px;background:rgba(255,255,255,.95);border-radius:20px;padding:6px 14px;font-weight:700;font-size:.83rem;color:#009B3A;box-shadow:0 2px 12px rgba(0,0,0,.12);display:none;backdrop-filter:blur(8px);z-index:1000}
-@media(max-width:480px){.timer{font-size:.75rem;padding:4px 10px}}
+/* ALERT */
+.alert{padding:12px 16px;border-radius:10px;font-size:.85rem;margin-bottom:16px;display:flex;align-items:flex-start;gap:10px}
+.alert-warn{background:#FFF8E1;border:1.5px solid #FFD54F;color:#5D4037}
+.alert-green{background:#E8F5E9;border:1.5px solid #A5D6A7;color:#1B5E20}
+.alert-icon{font-size:1.1rem;flex-shrink:0}
 
 /* SPINNER */
-.spinner{width:52px;height:52px;border:5px solid #E8F5E9;border-top-color:#009B3A;border-radius:50%;animation:spin .8s linear infinite;margin:24px auto}
+.sending-wrap{text-align:center;padding:50px 0}
+.spinner{width:52px;height:52px;border:5px solid #E8F5E9;border-top-color:#009B3A;border-radius:50%;animation:spin .9s linear infinite;margin:0 auto 20px}
 
-/* QUESTION ANIMATE */
-.q-animate{animation:slideIn .32s ease}
-
-/* SENDING SCREEN */
-.sending-wrap{text-align:center;padding:60px 40px}
-
-/* SHEETS STATUS */
-.sheets-status{text-align:center;font-size:.82rem;padding:8px;border-radius:8px;margin-bottom:14px}
+/* RESULTADOS */
+.result-header{text-align:center;margin-bottom:24px}
+.result-emoji{font-size:3.5rem;margin-bottom:12px}
+.result-name{font-size:1.15rem;font-weight:800;color:#1A1A1A;margin-bottom:4px;text-transform:uppercase}
+.result-cargo{font-size:.85rem;color:#666;margin-bottom:16px}
+.scores-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+@media(max-width:460px){.scores-grid{grid-template-columns:1fr}}
+.score-card{border-radius:14px;padding:18px 16px;text-align:center;border:2px solid}
+.score-card.desempeno{border-color:#009B3A;background:#E8F5E9}
+.score-card.conocimiento{border-color:#1565C0;background:#E3F2FD}
+.score-card h3{font-size:.75rem;font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;opacity:.8}
+.score-card .score-big{font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:4px}
+.score-card.desempeno .score-big{color:#1B5E20}
+.score-card.conocimiento .score-big{color:#0D47A1}
+.score-card .score-sub{font-size:.78rem;opacity:.75;margin-bottom:8px}
+.score-card .nivel-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:800;color:#fff}
+.comp-results{margin-bottom:20px}
+.comp-results h3{font-size:.85rem;font-weight:800;color:#555;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+.comp-result-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.comp-result-row .cr-name{font-size:.8rem;color:#333;flex:1}
+.cr-bar-wrap{flex:2;background:#F0F0F0;border-radius:5px;height:8px;overflow:hidden}
+.cr-bar{height:100%;border-radius:5px;background:#009B3A;transition:width .8s ease}
+.cr-val{font-size:.78rem;font-weight:700;color:#009B3A;min-width:35px;text-align:right}
+.obs-section{margin-bottom:20px}
+.obs-section label{font-size:.85rem;font-weight:700;color:#333;margin-bottom:6px;display:block}
+.obs-section textarea{background:#F8FDF9;border-color:#A5D6A7}
+.firmado-by{text-align:center;font-size:.78rem;color:#999;margin-top:12px}
+.detail-toggle{background:none;border:none;color:#009B3A;font-size:.83rem;font-weight:700;cursor:pointer;padding:0;margin-bottom:12px;display:flex;align-items:center;gap:5px}
+.detail-table{width:100%;border-collapse:collapse;font-size:.78rem;margin-bottom:16px}
+.detail-table th{background:#009B3A;color:#fff;padding:7px 10px;text-align:left}
+.detail-table td{padding:7px 10px;border-bottom:1px solid #EEE}
+.detail-table tr:nth-child(even) td{background:#F8FDF9}
+.tag-ok{color:#1B5E20;font-weight:700}
+.tag-no{color:#C62828;font-weight:700}
 </style>
 </head>
 <body>
 
-<div class="timer" id="timer">⏱ 00:00</div>
-
-<!-- ===== PANTALLA 1: INICIO ===== -->
-<div class="screen active" id="s-intro">
+<!-- ===== SCREEN 1: BIENVENIDA ===== -->
+<div class="screen active" id="s-bienvenida">
 <div class="card">
   <div class="app-header">
-    <div class="logo-container">
-      <img src="MIXTA.png" alt="Logo MIXTA">
-      <img src="Desempeño.png" alt="Educación Inicial">
+    <div class="logos-row">
+      <img src="MIXTA.png" alt="Asociación Hogares Comunitarios Mixta Pailitas">
+      <div class="title-center">
+        <div class="badge badge-green">ASOCIACIÓN DE HOGARES COMUNITARIOS MIXTA PAILITAS</div>
+      </div>
+      <img src="Desempeño.png" alt="Evaluación de Desempeño">
     </div>
-    <div class="subtitle-badge">ICBF · Educación Inicial</div>
-    <h1>Evaluación de Desempeño</h1>
-    <p><strong>Asociación de Hogares Comunitarios Mixta Pailitas</strong><br>
-    Modalidades <strong>Educación Inicial en el Hogar</strong> y<br><strong>Educación Inicial Campesina</strong></p>
+    <h1>Evaluación Integral de Desempeño</h1>
+    <p>Servicios EIC · EIH · Contrato 20006222025</p>
   </div>
 
-  <div class="feature-list">
-    <div class="feature-item">
-      <span class="feature-icon">🎯</span>
-      <div class="feature-text">Preguntas personalizadas según tu <strong>cargo y modalidad</strong>, tomadas de los lineamientos técnicos del ICBF</div>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:13px 16px;background:#F8FDF9;border-radius:12px;border:1.5px solid #C8E6C9">
+      <span style="font-size:1.3rem">🏆</span>
+      <div>
+        <div style="font-weight:700;font-size:.88rem;color:#1B5E20;margin-bottom:2px">Fase 1 — Evaluación de Desempeño</div>
+        <div style="font-size:.82rem;color:#555">27 indicadores agrupados en 6 competencias. Calificación del 1 (Nunca) al 5 (Siempre).</div>
+      </div>
     </div>
-    <div class="feature-item">
-      <span class="feature-icon">📊</span>
-      <div class="feature-text">Resultado inmediato con <strong>nota sobre 5.0</strong> y retroalimentación por pregunta</div>
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:13px 16px;background:#E3F2FD;border-radius:12px;border:1.5px solid #BBDEFB">
+      <span style="font-size:1.3rem">📝</span>
+      <div>
+        <div style="font-weight:700;font-size:.88rem;color:#0D47A1;margin-bottom:2px">Fase 2 — Prueba de Conocimiento</div>
+        <div style="font-size:.82rem;color:#555">Preguntas de conocimiento del programa según el cargo y modalidad asignada.</div>
+      </div>
     </div>
-    <div class="feature-item">
-      <span class="feature-icon">☁️</span>
-      <div class="feature-text">Tus respuestas se <strong>registran automáticamente</strong> en el sistema de seguimiento</div>
-    </div>
-    <div class="feature-item">
-      <span class="feature-icon">⏱</span>
-      <div class="feature-text">Sin límite de tiempo — avanza <strong>a tu propio ritmo</strong></div>
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:13px 16px;background:#FFF3E0;border-radius:12px;border:1.5px solid #FFE0B2">
+      <span style="font-size:1.3rem">📊</span>
+      <div>
+        <div style="font-weight:700;font-size:.88rem;color:#E65100;margin-bottom:2px">Resultados Integrados</div>
+        <div style="font-size:.82rem;color:#555">Puntuación de desempeño + nota de conocimiento en un solo informe con registro en Google Sheets.</div>
+      </div>
     </div>
   </div>
 
-  <button class="btn btn-primary" onclick="showScreen('s-registro')">
-    <span>Comenzar Evaluación</span> <span>→</span>
+  <div class="alert alert-warn">
+    <span class="alert-icon">⚠️</span>
+    <span>Responde con objetividad. Los resultados son registrados en el sistema y vistos por la coordinadora.</span>
+  </div>
+
+  <button class="btn btn-primary btn-full" onclick="irA('s-datos')">
+    Iniciar Evaluación &rarr;
   </button>
 </div>
 </div>
 
-<!-- ===== PANTALLA 2: REGISTRO ===== -->
-<div class="screen" id="s-registro">
+<!-- ===== SCREEN 2: DATOS ===== -->
+<div class="screen" id="s-datos">
 <div class="card">
   <div class="app-header">
-    <h1 style="font-size:1.5rem">Datos del Evaluado</h1>
-    <p>Completa tu información para asignar las preguntas correctas</p>
+    <div class="logos-row">
+      <img src="MIXTA.png" alt="Logo Mixta Pailitas">
+      <div class="title-center"><div class="badge badge-green">DATOS DEL COLABORADOR</div></div>
+      <img src="Desempeño.png" alt="Evaluación">
+    </div>
+    <h1>Información personal</h1>
+    <p>Completa todos los campos antes de continuar</p>
   </div>
 
   <div class="form-group">
     <label>👤 Nombre Completo</label>
-    <input type="text" id="f-nombre" placeholder="Ej: María González Pérez" autocomplete="name">
+    <input type="text" id="f-nombre" placeholder="Ej: María González Pérez" autocomplete="name" style="text-transform:uppercase">
   </div>
 
   <div class="form-row">
@@ -219,11 +264,11 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
       <input type="text" id="f-doc" placeholder="Ej: 1023456789" inputmode="numeric">
     </div>
   </div>
-  <div style="height:12px"></div>
+  <div style="height:10px"></div>
 
   <div class="form-row">
     <div class="form-group" style="margin-bottom:0">
-      <label>📞 Número de Teléfono</label>
+      <label>📞 Teléfono</label>
       <input type="tel" id="f-telefono" placeholder="Ej: 3001234567" inputmode="numeric">
     </div>
     <div class="form-group" style="margin-bottom:0">
@@ -236,7 +281,7 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
       </select>
     </div>
   </div>
-  <div style="height:18px"></div>
+  <div style="height:10px"></div>
 
   <div class="form-group">
     <label>💼 Cargo / Perfil</label>
@@ -251,336 +296,597 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
     </select>
   </div>
 
-  <div id="preguntas-info" style="display:none"></div>
+  <div id="preguntas-info" style="display:none" class="alert alert-green">
+    <span class="alert-icon">✅</span><span id="preguntas-info-txt"></span>
+  </div>
 
   <div class="divider"></div>
 
-  <button class="btn btn-primary" onclick="iniciarQuiz()">
-    <span>Iniciar Prueba</span> <span>→</span>
+  <button class="btn btn-primary btn-full" onclick="iniciarEvaluacion()">
+    Continuar a Evaluación de Desempeño &rarr;
   </button>
 </div>
 </div>
 
-<!-- ===== PANTALLA 3: QUIZ ===== -->
+<!-- ===== SCREEN 3: EVALUACIÓN DE DESEMPEÑO ===== -->
+<div class="screen" id="s-desempeno">
+<div class="card">
+  <div class="phase-bar">
+    <div class="phase-step active" id="ph-1"><span>🏆</span>Desempeño</div>
+    <div class="phase-step" id="ph-2"><span>📝</span>Conocimiento</div>
+    <div class="phase-step" id="ph-3"><span>📊</span>Resultados</div>
+  </div>
+
+  <div class="app-header" style="margin-bottom:16px">
+    <div class="badge badge-green">FASE 1 DE 2</div>
+    <h1>Evaluación de Desempeño</h1>
+    <p>Califica cada indicador del 1 al 5 según la frecuencia de la conducta</p>
+  </div>
+
+  <div class="likert-legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#E53935">1</div><span>Nunca</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#FF7043">2</div><span>Casi nunca</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#FFA000">3</div><span>A veces</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#43A047">4</div><span>Casi siempre</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#1B5E20">5</div><span>Siempre</span></div>
+  </div>
+
+  <div class="score-live" id="score-live-wrap">
+    <div class="big-num" id="live-score">0</div>
+    <div class="score-info">
+      <div class="score-label">Puntaje actual (máx. 135)</div>
+      <div id="live-level" class="score-level level-pending">Sin calificar</div>
+    </div>
+    <div style="font-size:.78rem;color:#555;text-align:right">
+      <div id="live-rated">0 de 27</div>
+      <div>indicadores</div>
+    </div>
+  </div>
+
+  <div id="comp-blocks"></div>
+
+  <div id="desempeno-warn" class="alert alert-warn" style="display:none;margin-top:16px">
+    <span class="alert-icon">⚠️</span>
+    <span>Debes calificar <strong>todos los indicadores</strong> antes de continuar.</span>
+  </div>
+
+  <div style="margin-top:20px">
+    <button class="btn btn-primary btn-full" onclick="siguienteAQuiz()">
+      Continuar a Prueba de Conocimiento &rarr;
+    </button>
+  </div>
+</div>
+</div>
+
+<!-- ===== SCREEN 4: QUIZ DE CONOCIMIENTO ===== -->
 <div class="screen" id="s-quiz">
 <div class="card">
+  <div class="phase-bar">
+    <div class="phase-step done" id="ph2-1"><span>✅</span>Desempeño</div>
+    <div class="phase-step active" id="ph2-2"><span>📝</span>Conocimiento</div>
+    <div class="phase-step" id="ph2-3"><span>📊</span>Resultados</div>
+  </div>
+
   <div class="progress-wrap">
     <div class="progress-meta">
       <span id="prog-txt">Pregunta 1 de 10</span>
-      <span id="prog-pct">10%</span>
+      <span id="prog-pct">0%</span>
     </div>
     <div class="progress-bar">
       <div class="progress-fill" id="prog-fill" style="width:0%"></div>
     </div>
   </div>
 
-  <div id="q-wrap" class="q-animate">
-    <div class="q-topic" id="q-topic">📌 Tema</div>
+  <div id="q-wrap">
+    <div class="q-topic-badge" id="q-topic">📌 Tema</div>
     <div class="q-text" id="q-text"></div>
     <div class="options" id="opts"></div>
+    <div id="q-feedback" style="display:none" class="q-feedback"></div>
   </div>
 
-  <div class="q-actions" id="q-actions" style="display:none">
-    <button class="btn btn-primary btn-sm" id="btn-next" onclick="siguientePregunta()">Siguiente →</button>
+  <div id="q-actions" style="display:none;margin-top:18px;display:none">
+    <button class="btn btn-primary btn-sm" id="btn-next" onclick="siguientePregunta()">Siguiente &rarr;</button>
   </div>
 </div>
 </div>
 
-<!-- ===== PANTALLA 4: ENVIANDO ===== -->
+<!-- ===== SCREEN 5: ENVIANDO ===== -->
 <div class="screen" id="s-enviando">
 <div class="card sending-wrap">
   <div class="spinner"></div>
   <h2 style="color:#009B3A;margin-bottom:8px">Registrando resultados...</h2>
-  <p style="color:#999;font-size:.92rem">Por favor espera un momento</p>
+  <p style="color:#999;font-size:.9rem">Por favor espera un momento</p>
 </div>
 </div>
 
-<!-- ===== PANTALLA 5: RESULTADOS ===== -->
+<!-- ===== SCREEN 6: RESULTADOS ===== -->
 <div class="screen" id="s-resultados">
 <div class="card">
-  <div class="app-header" style="margin-bottom:20px">
-    <h1 style="font-size:1.5rem">Resultado de la Evaluación</h1>
-    <p id="res-persona" style="font-weight:700;color:#009B3A;font-size:.95rem"></p>
+  <div class="phase-bar">
+    <div class="phase-step done"><span>✅</span>Desempeño</div>
+    <div class="phase-step done"><span>✅</span>Conocimiento</div>
+    <div class="phase-step active"><span>📊</span>Resultados</div>
   </div>
 
-  <div class="score-wrap">
-    <div class="score-circle">
-      <svg width="170" height="170" viewBox="0 0 170 170">
-        <circle cx="85" cy="85" r="72" fill="none" stroke="#E8F5E9" stroke-width="14"/>
-        <circle id="score-arc" cx="85" cy="85" r="72" fill="none" stroke="url(#grad)" stroke-width="14"
-          stroke-linecap="round" stroke-dasharray="452.4" stroke-dashoffset="452.4"/>
-        <defs>
-          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#009B3A"/>
-            <stop offset="100%" stop-color="#F7A800"/>
-          </linearGradient>
-        </defs>
-      </svg>
-      <div class="score-inner">
-        <div class="score-main" id="res-nota">0.0</div>
-        <div class="score-sub">de 5.0</div>
-      </div>
-    </div>
+  <div class="result-header">
+    <div class="result-emoji" id="res-emoji">🎉</div>
+    <div class="result-name" id="res-nombre"></div>
+    <div class="result-cargo" id="res-cargo"></div>
+    <div class="badge badge-green" id="res-fecha"></div>
   </div>
 
-  <div class="result-badge" id="res-badge"></div>
-
-  <div class="stats-row">
-    <div class="stat-box">
-      <div class="stat-num" id="res-correctas" style="color:#009B3A">–</div>
-      <div class="stat-lbl">CORRECTAS</div>
+  <div class="scores-grid">
+    <div class="score-card desempeno">
+      <h3>🏆 Desempeño</h3>
+      <div class="score-big" id="res-desempeno-pts">0</div>
+      <div class="score-sub">puntos de 135</div>
+      <div class="nivel-badge" id="res-nivel-badge">—</div>
     </div>
-    <div class="stat-box">
-      <div class="stat-num" id="res-incorrectas" style="color:#C62828">–</div>
-      <div class="stat-lbl">INCORRECTAS</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-num" id="res-tiempo" style="color:#F7A800">–</div>
-      <div class="stat-lbl">MINUTOS</div>
+    <div class="score-card conocimiento">
+      <h3>📝 Conocimiento</h3>
+      <div class="score-big" id="res-nota">0.00</div>
+      <div class="score-sub" id="res-correctas-txt">0 de 0 correctas</div>
+      <div class="nivel-badge" style="background:#1565C0" id="res-pct">0%</div>
     </div>
   </div>
 
-  <div id="sheets-msg" class="sheets-status"></div>
+  <div class="comp-results">
+    <h3>Resultados por competencia</h3>
+    <div id="comp-result-list"></div>
+  </div>
 
-  <div class="divider"></div>
+  <div class="obs-section">
+    <label>📝 Observaciones / Compromisos de Mejora</label>
+    <textarea id="obs-text" placeholder="Escribe aquí las observaciones generales y compromisos de mejora del colaborador..."></textarea>
+  </div>
 
-  <h3 style="color:#333;margin-bottom:14px;font-size:.97rem;font-weight:700">📝 Revisión de Respuestas</h3>
-  <div id="review-list"></div>
+  <div id="sheets-status" class="alert alert-warn" style="margin-bottom:16px;display:none">
+    <span class="alert-icon">⚠️</span>
+    <span id="sheets-status-txt"></span>
+  </div>
 
-  <div style="margin-top:24px">
-    <button class="btn btn-secondary" onclick="location.reload()">🔄 Nueva Evaluación</button>
+  <button class="btn btn-secondary btn-full btn-sm" onclick="toggleDetalle()" id="btn-detalle" style="margin-bottom:12px">
+    Ver detalle de respuestas ▼
+  </button>
+
+  <div id="detalle-wrap" style="display:none">
+    <table class="detail-table">
+      <thead><tr><th>#</th><th>Tema</th><th>Tu respuesta</th><th>Resultado</th></tr></thead>
+      <tbody id="detalle-body"></tbody>
+    </table>
+  </div>
+
+  <button class="btn btn-primary btn-full" onclick="guardarYFinalizar()">
+    Guardar y Finalizar ✓
+  </button>
+
+  <div class="firmado-by" style="margin-top:16px">
+    <img src="MIXTA.png" alt="Logo" style="height:36px;opacity:.7;vertical-align:middle;margin-right:8px">
+    Asociación de Hogares Comunitarios Mixta Pailitas
   </div>
 </div>
 </div>
 
 <script>
-// ─────────────────────────────────────────────────────────────
-//  CONFIGURACIÓN  — Reemplaza con la URL de tu Apps Script
-// ─────────────────────────────────────────────────────────────
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbzVr_woMdLeem8gmaUnVoN5EqaN3Km3e1WjtuMkWdT-2IeXF90C2AcAJMWZUBKECUNJ-g/exec";
+// ============================================================
+//  CONFIGURACIÓN
+// ============================================================
+const SHEET_URL = "TU_URL_AQUI"; // Pega aquí la URL de tu Apps Script
 
-// ─────────────────────────────────────────────────────────────
-//  DATOS (JSON embebido)
-// ─────────────────────────────────────────────────────────────
-const DATA = {"Ambos":{"Agente educativo":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":3,"tema":"Estrategias de atención","pregunta":"¿Cuál combinación es correcta?","opcion_A":"EIH: encuentro institucional; EIC: encuentro escolar","opcion_B":"EIH: encuentro en el hogar y encuentro grupal; EIC: encuentro en el hogar y encuentro comunitario","opcion_C":"EIH: solo encuentros virtuales; EIC: solo visitas domiciliarias","opcion_D":"Ambos servicios trabajan únicamente mediante encuentros comunitarios","respuesta_correcta":"B"},{"numero_pregunta":4,"tema":"Sentido de las prácticas","pregunta":"En las guías, las prácticas y acciones orientadoras se entienden como:","opcion_A":"Temas fijos que deben repetirse en todas las sesiones","opcion_B":"Listados de actividades para diligenciar formatos","opcion_C":"Interrelaciones cotidianas de cuidado y crianza que se fortalecen pedagógicamente","opcion_D":"Manuales cerrados que no deben adaptarse al territorio","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":9,"tema":"Base de la planeación","pregunta":"La planeación del agente educativo debe construirse a partir de:","opcion_A":"Temas predeterminados sin relación con el contexto","opcion_B":"Prácticas priorizadas, caracterización y particularidades familiares y territoriales","opcion_C":"Actividades copiadas de otros servicios","opcion_D":"Únicamente de la disponibilidad de materiales","respuesta_correcta":"B"},{"numero_pregunta":10,"tema":"Sentido del encuentro en el hogar","pregunta":"El encuentro en el hogar busca principalmente:","opcion_A":"Evaluar a la familia desde una lógica sancionatoria","opcion_B":"Fortalecer prácticas de cuidado y crianza desde experiencias intencionadas","opcion_C":"Entregar únicamente recomendaciones escritas","opcion_D":"Reemplazar el vínculo entre familia y niño","respuesta_correcta":"B"},{"numero_pregunta":11,"tema":"Encuentros grupales o comunitarios","pregunta":"En estos encuentros, el agente educativo debe:","opcion_A":"Desarrollar experiencias con juego, arte, literatura, exploración y reflexión con familias","opcion_B":"Limitarse a dar una charla magistral","opcion_C":"Suspender la participación de la comunidad","opcion_D":"Aplicar solo actividades manuales repetitivas","respuesta_correcta":"A"},{"numero_pregunta":12,"tema":"Error de planeación","pregunta":"¿Cuál práctica sería incorrecta?","opcion_A":"Relacionar la planeación con la vida cotidiana","opcion_B":"Adaptar experiencias al territorio","opcion_C":"Tratar las prácticas como temas aislados y desarticulados","opcion_D":"Dialogar con los saberes familiares","respuesta_correcta":"C"},{"numero_pregunta":13,"tema":"Seguimiento al desarrollo","pregunta":"El seguimiento al desarrollo infantil debe hacerse:","opcion_A":"Solo cuando exista dificultad evidente","opcion_B":"Según instrumentos y tiempos definidos, con lectura contextual","opcion_C":"Únicamente al finalizar el contrato","opcion_D":"De forma verbal y sin registro","respuesta_correcta":"B"},{"numero_pregunta":14,"tema":"Relación con las familias","pregunta":"Frente a los saberes de las familias, el agente educativo debe:","opcion_A":"Descalificarlos si no coinciden con su criterio","opcion_B":"Reconocerlos y dialogar con ellos para fortalecer prácticas","opcion_C":"Sustituirlos completamente por instrucciones técnicas","opcion_D":"Evitar abordarlos en el encuentro","respuesta_correcta":"B"},{"numero_pregunta":28,"tema":"Estrategias EIH - Encuentros grupales frecuencia","pregunta":"¿Cuántos encuentros grupales se deben realizar por semana en cada Unidad de Atención Específica?","opcion_A":"1 encuentro grupal","opcion_B":"2 encuentros grupales","opcion_C":"3 encuentros grupales","opcion_D":"4 encuentros grupales","respuesta_correcta":"A"},{"numero_pregunta":29,"tema":"Estrategias EIH - Encuentro grupal duración mínima","pregunta":"¿Cuál es la duración mínima de trabajo efectivo que debe tener cada encuentro grupal?","opcion_A":"60 minutos","opcion_B":"90 minutos","opcion_C":"120 minutos","opcion_D":"150 minutos","respuesta_correcta":"C"},{"numero_pregunta":43,"tema":"Agente Educativo - Caracterización","pregunta":"¿Cuál es el propósito de la caracterización que realiza el Agente Educativo de niñas, niños y familias?","opcion_A":"Establecer criterios de exclusión","opcion_B":"Identificar características para potenciar desarrollo integral","opcion_C":"Recopilar información para reportes administrativos","opcion_D":"Clasificar participantes por capacidades","respuesta_correcta":"B"},{"numero_pregunta":47,"tema":"Agente Educativo - Trabajo colaborativo","pregunta":"¿Con quiénes debe trabajar colaborativamente el Agente Educativo para garantizar coherencia en la atención?","opcion_A":"Solo con el coordinador","opcion_B":"Con auxiliar pedagógico, profesionales psicosocial y de salud/nutrición","opcion_C":"Únicamente con padres de familia","opcion_D":"De manera independiente","respuesta_correcta":"B"}]},"Apoyo psicosocial":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":3,"tema":"Estrategias de atención","pregunta":"¿Cuál combinación es correcta?","opcion_A":"EIH: encuentro institucional; EIC: encuentro escolar","opcion_B":"EIH: encuentro en el hogar y encuentro grupal; EIC: encuentro en el hogar y encuentro comunitario","opcion_C":"EIH: solo encuentros virtuales; EIC: solo visitas domiciliarias","opcion_D":"Ambos servicios trabajan únicamente mediante encuentros comunitarios","respuesta_correcta":"B"},{"numero_pregunta":4,"tema":"Sentido de las prácticas","pregunta":"En las guías, las prácticas y acciones orientadoras se entienden como:","opcion_A":"Temas fijos que deben repetirse en todas las sesiones","opcion_B":"Listados de actividades para diligenciar formatos","opcion_C":"Interrelaciones cotidianas de cuidado y crianza que se fortalecen pedagógicamente","opcion_D":"Manuales cerrados que no deben adaptarse al territorio","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":9,"tema":"Sentido del rol","pregunta":"El profesional psicosocial en el encuentro en el hogar debe:","opcion_A":"Enfocarse solo en diligenciar formatos","opcion_B":"Desarrollar acciones intencionadas para fortalecer cuidado, crianza y bienestar familiar","opcion_C":"Sustituir al coordinador","opcion_D":"Atender solo casos críticos","respuesta_correcta":"B"},{"numero_pregunta":12,"tema":"Intervención adecuada","pregunta":"Una intervención adecuada del apoyo psicosocial privilegia:","opcion_A":"El señalamiento de errores familiares","opcion_B":"El fortalecimiento de interacciones sensibles y trato respetuoso","opcion_C":"La sanción por incumplimientos","opcion_D":"La atención descontextualizada","respuesta_correcta":"B"},{"numero_pregunta":13,"tema":"Enfoque diferencial","pregunta":"Frente a familias con condiciones diversas, el profesional debe:","opcion_A":"Aplicar respuestas iguales para todos","opcion_B":"Ajustar la atención desde el enfoque diferencial de derechos","opcion_C":"Remitir sin acompañamiento inicial","opcion_D":"Priorizar solo el componente administrativo","respuesta_correcta":"B"},{"numero_pregunta":14,"tema":"Trabajo interdisciplinario","pregunta":"¿Cuál actuación sería incorrecta?","opcion_A":"Coordinar con el equipo","opcion_B":"Integrar su orientación al propósito del encuentro","opcion_C":"Trabajar separado del sentido pedagógico del servicio","opcion_D":"Reconocer el contexto familiar","respuesta_correcta":"C"},{"numero_pregunta":15,"tema":"Protección","pregunta":"Si durante el acompañamiento identifica una alerta de vulneración, debe:","opcion_A":"Omitirla si no afecta la asistencia","opcion_B":"Documentar, orientar y articular acciones de protección pertinentes","opcion_C":"Esperar a la siguiente visita sin registro","opcion_D":"Limitarse a comentar informalmente el caso","respuesta_correcta":"B"},{"numero_pregunta":31,"tema":"Estrategias EIH - Encuentros psicosocial por UA","pregunta":"¿Cuántos encuentros mínimos debe liderar el profesional psicosocial por cada Unidad de Atención al mes?","opcion_A":"1 encuentro","opcion_B":"2 encuentros","opcion_C":"3 encuentros","opcion_D":"4 encuentros","respuesta_correcta":"C"},{"numero_pregunta":63,"tema":"Psicosocial - Liderazgo componente familia y comunidad","pregunta":"¿Cuál es la responsabilidad principal del Profesional Psicosocial en EIH?","opcion_A":"Enseñanza directa de contenidos","opcion_B":"Liderar el componente de familia, comunidad y redes sociales","opcion_C":"Gestión exclusiva de recursos","opcion_D":"Supervisión administrativa","respuesta_correcta":"B"},{"numero_pregunta":66,"tema":"Psicosocial - Rutas y protocolos","pregunta":"¿Qué debe hacer el Profesional Psicosocial ante presuntos casos de violencia o vulneración?","opcion_A":"Ignorar los casos","opcion_B":"Activar rutas y protocolos según orientaciones institucionales","opcion_C":"Solo informar verbalmente","opcion_D":"Intentar resolver independientemente","respuesta_correcta":"B"},{"numero_pregunta":67,"tema":"Psicosocial - Transiciones sensibles","pregunta":"¿Qué significa acompañamiento en 'transiciones sensibles' según el rol psicosocial?","opcion_A":"No acompañamiento","opcion_B":"Apoyo en momentos de cambio (entradas a educación formal, etc.)","opcion_C":"Solo supervisión de cambios administrativos","opcion_D":"Documentación de cambios","respuesta_correcta":"B"}]},"Auxiliar administrativo":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":3,"tema":"Estrategias de atención","pregunta":"¿Cuál combinación es correcta?","opcion_A":"EIH: encuentro institucional; EIC: encuentro escolar","opcion_B":"EIH: encuentro en el hogar y encuentro grupal; EIC: encuentro en el hogar y encuentro comunitario","opcion_C":"EIH: solo encuentros virtuales; EIC: solo visitas domiciliarias","opcion_D":"Ambos servicios trabajan únicamente mediante encuentros comunitarios","respuesta_correcta":"B"},{"numero_pregunta":4,"tema":"Sentido de las prácticas","pregunta":"En las guías, las prácticas y acciones orientadoras se entienden como:","opcion_A":"Temas fijos que deben repetirse en todas las sesiones","opcion_B":"Listados de actividades para diligenciar formatos","opcion_C":"Interrelaciones cotidianas de cuidado y crianza que se fortalecen pedagógicamente","opcion_D":"Manuales cerrados que no deben adaptarse al territorio","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":12,"tema":"Función general","pregunta":"Una función coherente del apoyo administrativo dentro del servicio es:","opcion_A":"Liderar el proceso pedagógico","opcion_B":"Apoyar organización documental, registros, flujos administrativos y soporte operativo","opcion_C":"Reemplazar la atención a familias","opcion_D":"Definir prácticas pedagógicas","respuesta_correcta":"B"},{"numero_pregunta":13,"tema":"Calidad de la gestión","pregunta":"Desde el componente administrativo y de gestión, ¿qué aporta un buen desempeño del cargo?","opcion_A":"Registros oportunos, soporte organizado y flujo administrativo confiable","opcion_B":"Decisiones pedagógicas unilaterales","opcion_C":"Reducción de encuentros en territorio","opcion_D":"Sustitución de las funciones del coordinador","respuesta_correcta":"A"},{"numero_pregunta":14,"tema":"Relación con el equipo","pregunta":"El apoyo administrativo debe relacionarse con el equipo:","opcion_A":"Solo cuando haya auditoría","opcion_B":"Como soporte articulado a la operación y a los requerimientos del servicio","opcion_C":"Sin conocer la lógica general del servicio","opcion_D":"Limitándose a archivo muerto","respuesta_correcta":"B"},{"numero_pregunta":15,"tema":"Error de desempeño","pregunta":"¿Cuál sería un error claro en este cargo?","opcion_A":"Mantener soportes organizados","opcion_B":"Garantizar oportunidad en la gestión documental","opcion_C":"Desconectarse de los requerimientos operativos del servicio y afectar el flujo de registros","opcion_D":"Apoyar procesos administrativos del GT","respuesta_correcta":"C"}]},"Auxiliar pedagógico":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":3,"tema":"Estrategias de atención","pregunta":"¿Cuál combinación es correcta?","opcion_A":"EIH: encuentro institucional; EIC: encuentro escolar","opcion_B":"EIH: encuentro en el hogar y encuentro grupal; EIC: encuentro en el hogar y encuentro comunitario","opcion_C":"EIH: solo encuentros virtuales; EIC: solo visitas domiciliarias","opcion_D":"Ambos servicios trabajan únicamente mediante encuentros comunitarios","respuesta_correcta":"B"},{"numero_pregunta":4,"tema":"Sentido de las prácticas","pregunta":"En las guías, las prácticas y acciones orientadoras se entienden como:","opcion_A":"Temas fijos que deben repetirse en todas las sesiones","opcion_B":"Listados de actividades para diligenciar formatos","opcion_C":"Interrelaciones cotidianas de cuidado y crianza que se fortalecen pedagógicamente","opcion_D":"Manuales cerrados que no deben adaptarse al territorio","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}]},"Coordinador":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":3,"tema":"Estrategias de atención","pregunta":"¿Cuál combinación es correcta?","opcion_A":"EIH: encuentro institucional; EIC: encuentro escolar","opcion_B":"EIH: encuentro en el hogar y encuentro grupal; EIC: encuentro en el hogar y encuentro comunitario","opcion_C":"EIH: solo encuentros virtuales; EIC: solo visitas domiciliarias","opcion_D":"Ambos servicios trabajan únicamente mediante encuentros comunitarios","respuesta_correcta":"B"},{"numero_pregunta":4,"tema":"Sentido de las prácticas","pregunta":"En las guías, las prácticas y acciones orientadoras se entienden como:","opcion_A":"Temas fijos que deben repetirse en todas las sesiones","opcion_B":"Listados de actividades para diligenciar formatos","opcion_C":"Interrelaciones cotidianas de cuidado y crianza que se fortalecen pedagógicamente","opcion_D":"Manuales cerrados que no deben adaptarse al territorio","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":11,"tema":"Acompañamiento técnico","pregunta":"El propósito principal del acompañamiento del coordinador al equipo es:","opcion_A":"Vigilar asistencia sin retroalimentar","opcion_B":"Reemplazar al agente educativo en los encuentros","opcion_C":"Cualificar al talento humano mediante observación, análisis y retroalimentación","opcion_D":"Limitarse a recoger formatos firmados","respuesta_correcta":"C"},{"numero_pregunta":12,"tema":"Ajustes operativos","pregunta":"Si el territorio exige ajustes en la organización de la atención, el coordinador debe:","opcion_A":"Cambiar todo por decisión personal","opcion_B":"Solicitar aval técnico y tramitar la aprobación correspondiente en las instancias definidas","opcion_C":"Esperar al cierre del contrato","opcion_D":"Delegar la decisión al auxiliar administrativo","respuesta_correcta":"B"},{"numero_pregunta":13,"tema":"Articulación del equipo","pregunta":"¿Cuál es una responsabilidad central del coordinador frente al equipo interdisciplinario?","opcion_A":"Separar totalmente los componentes para facilitar el control","opcion_B":"Propiciar planeación conjunta, claridad de roles y coherencia técnica","opcion_C":"Limitar la participación del talento humano en las decisiones","opcion_D":"Concentrarse solo en la logística","respuesta_correcta":"B"},{"numero_pregunta":14,"tema":"Seguimiento a la calidad","pregunta":"¿Qué debe priorizar el coordinador en el seguimiento del servicio?","opcion_A":"Solo la puntualidad del equipo","opcion_B":"Solo la entrega de papelería","opcion_C":"Calidad de la atención, planeación, registros, articulación y cumplimiento de componentes","opcion_D":"Solo la cantidad de encuentros realizados","respuesta_correcta":"C"},{"numero_pregunta":15,"tema":"Talento humano","pregunta":"Una acción clave del coordinador dentro del componente de talento humano es:","opcion_A":"Evitar espacios de cualificación para ahorrar tiempo","opcion_B":"Organizar procesos de acompañamiento, cualificación y fortalecimiento continuo","opcion_C":"Centralizar todas las funciones del equipo","opcion_D":"Delegar el seguimiento técnico fuera del servicio","respuesta_correcta":"B"},{"numero_pregunta":20,"tema":"Estructura operativa EIH - Configuración GT","pregunta":"¿Cuántos Agentes Educativos (GA) conforman un Grupo Territorial (GT) en el servicio de Educación Inicial en el Hogar?","opcion_A":"3 GA","opcion_B":"6 GA","opcion_C":"8 GA","opcion_D":"10 GA","respuesta_correcta":"B"},{"numero_pregunta":27,"tema":"Estrategias EIH - Encuentro hogar duración","pregunta":"¿Cuál es la duración establecida para cada encuentro en el hogar en educación inicial?","opcion_A":"30 a 45 minutos","opcion_B":"45 a 60 minutos","opcion_C":"60 a 90 minutos","opcion_D":"90 a 120 minutos","respuesta_correcta":"C"},{"numero_pregunta":35,"tema":"Coordinador - Liderazgo y coordinación","pregunta":"¿Cuál es la responsabilidad principal del Coordinador en el servicio de Educación Inicial en el Hogar?","opcion_A":"Enseñanza directa a los participantes","opcion_B":"Liderazgo de la implementación y coordinación del talento humano","opcion_C":"Manejo exclusivo de salud y nutrición","opcion_D":"Realización de encuentros en el hogar","respuesta_correcta":"B"},{"numero_pregunta":37,"tema":"Coordinador - Alianzas intersectoriales","pregunta":"¿Qué responsabilidad tiene el Coordinador respecto a las alianzas intersectoriales en el territorio?","opcion_A":"No es responsable de alianzas","opcion_B":"Solo coordinar con el sector salud","opcion_C":"Liderar el desarrollo de alianzas con actores de la comunidad","opcion_D":"Supervisar las acciones de otros sectores","respuesta_correcta":"C"},{"numero_pregunta":38,"tema":"Coordinador - Rutas de atención","pregunta":"¿Cuál es el rol del Coordinador en las rutas de atención ante casos de amenaza o vulneración de derechos?","opcion_A":"Investigar de manera independiente","opcion_B":"Coordinar la activación de rutas según protocolos","opcion_C":"Ignorar los casos identificados","opcion_D":"Solo informar verbalmente","respuesta_correcta":"B"},{"numero_pregunta":39,"tema":"Coordinador - Plan de cualificación","pregunta":"¿Qué debe incluir el plan de cualificación del talento humano que lidera el Coordinador?","opcion_A":"Solo temas pedagógicos","opcion_B":"Acciones de fortalecimiento en educación inicial, desarrollo infantil y políticas de estado","opcion_C":"Exclusivamente temas administrativos","opcion_D":"Solo procesos de selección","respuesta_correcta":"B"}]},"Profesional de salud y nutrición":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":3,"tema":"Estrategias de atención","pregunta":"¿Cuál combinación es correcta?","opcion_A":"EIH: encuentro institucional; EIC: encuentro escolar","opcion_B":"EIH: encuentro en el hogar y encuentro grupal; EIC: encuentro en el hogar y encuentro comunitario","opcion_C":"EIH: solo encuentros virtuales; EIC: solo visitas domiciliarias","opcion_D":"Ambos servicios trabajan únicamente mediante encuentros comunitarios","respuesta_correcta":"B"},{"numero_pregunta":4,"tema":"Sentido de las prácticas","pregunta":"En las guías, las prácticas y acciones orientadoras se entienden como:","opcion_A":"Temas fijos que deben repetirse en todas las sesiones","opcion_B":"Listados de actividades para diligenciar formatos","opcion_C":"Interrelaciones cotidianas de cuidado y crianza que se fortalecen pedagógicamente","opcion_D":"Manuales cerrados que no deben adaptarse al territorio","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":9,"tema":"Propósito del rol","pregunta":"En los encuentros en el hogar, el profesional de salud y nutrición debe:","opcion_A":"Realizar únicamente control clínico","opcion_B":"Orientar prácticas de cuidado, alimentación, bienestar y salud según necesidades del hogar","opcion_C":"Sustituir el proceso pedagógico","opcion_D":"Intervenir solo si hay una urgencia","respuesta_correcta":"B"},{"numero_pregunta":10,"tema":"Articulación","pregunta":"Su participación en el servicio debe ser:","opcion_A":"Aislada del proceso pedagógico","opcion_B":"Exclusivamente documental","opcion_C":"Integrada al trabajo con familias y al propósito general del servicio","opcion_D":"Restringida a talleres masivos","respuesta_correcta":"C"},{"numero_pregunta":13,"tema":"Consejería pertinente","pregunta":"¿Cuál acción es coherente con la guía?","opcion_A":"Dar recomendaciones generales sin mirar contexto","opcion_B":"Orientar según edad, gestación, prácticas familiares y territorio","opcion_C":"Limitarse a entregar folletos","opcion_D":"Remitir todos los temas sin intervención inicial","respuesta_correcta":"B"},{"numero_pregunta":15,"tema":"Respuesta ante necesidad identificada","pregunta":"Si el profesional identifica una necesidad que supera su orientación inmediata, debe:","opcion_A":"Ignorarla si no estaba programada","opcion_B":"Activar articulaciones y rutas pertinentes dentro del servicio","opcion_C":"Esperar el cierre mensual","opcion_D":"Dejar la responsabilidad solo a la familia","respuesta_correcta":"B"},{"numero_pregunta":32,"tema":"Estrategias EIH - Encuentros salud nutrición por UA","pregunta":"¿Cuántos encuentros mínimos debe liderar el profesional de salud y nutrición por cada Unidad de Atención al mes?","opcion_A":"1 encuentro","opcion_B":"2 encuentros","opcion_C":"3 encuentros","opcion_D":"4 encuentros","respuesta_correcta":"A"},{"numero_pregunta":72,"tema":"Salud Nutrición - Tamizaje nutricional","pregunta":"¿Qué incluye el tamizaje nutricional que realiza el Profesional de Salud y Nutrición?","opcion_A":"Solo recolección de datos","opcion_B":"Evaluación del estado nutricional y medidas antropométricas","opcion_C":"Únicamente registros administrativos","opcion_D":"Diagnósticos médicos","respuesta_correcta":"B"},{"numero_pregunta":74,"tema":"Salud Nutrición - Minuta patrón","pregunta":"¿Qué es la 'minuta patrón' que debe vigilar el Profesional de Salud y Nutrición?","opcion_A":"Un documento administrativo","opcion_B":"Plan de alimentación diaria según recomendaciones nutricionales ICBF","opcion_C":"Solo listado de alimentos permitidos","opcion_D":"Registro de compras","respuesta_correcta":"B"},{"numero_pregunta":77,"tema":"Salud Nutrición - Desnutrición aguda","pregunta":"¿Cuál es el protocolo del Profesional ante identificación de desnutrición aguda?","opcion_A":"Documentar sin intervenir","opcion_B":"Canalizar a servicios de salud inmediatamente","opcion_C":"Solo informar a padres verbalmente","opcion_D":"Esperar seguimiento administrativo","respuesta_correcta":"B"}]}},"EIH/EIC":{"Agente educativo":{"especificas":[{"numero_pregunta":15,"tema":"Diferencia EIH/EIC","pregunta":"¿Cuál afirmación es correcta?","opcion_A":"La práctica 17 aplica a ambos servicios","opcion_B":"En EIC se incorpora la práctica 17 de autoabastecimiento; en EIH no aplica","opcion_C":"Ninguno de los servicios trabaja prácticas","opcion_D":"EIH tiene 17 prácticas y EIC 16","respuesta_correcta":"B"}]},"Auxiliar administrativo":{"especificas":[{"numero_pregunta":9,"tema":"Presencia del cargo","pregunta":"¿Cuál afirmación es correcta sobre el auxiliar administrativo?","opcion_A":"Está reconocido en EIH por GT de 300 participantes","opcion_B":"Está reconocido en todos los GT de EIC de 160 participantes","opcion_C":"Reemplaza al coordinador pedagógico","opcion_D":"Solo existe en la supervisión regional","respuesta_correcta":"A"}]},"Coordinador":{"especificas":[{"numero_pregunta":9,"tema":"Estructura operativa EIH","pregunta":"En Educación Inicial en el Hogar, un GT estándar está conformado por:","opcion_A":"160 participantes y 8 UCA","opcion_B":"300 participantes, 6 GA, cada GA con agente educativo y auxiliar pedagógico","opcion_C":"80 participantes y 4 aulas","opcion_D":"320 participantes con solo un agente educativo","respuesta_correcta":"B"},{"numero_pregunta":10,"tema":"Estructura operativa EIC","pregunta":"En Educación Inicial Campesina, un GT estándar corresponde a:","opcion_A":"300 participantes con 6 GA","opcion_B":"160 participantes con 8 UCA","opcion_C":"50 participantes con una sola unidad","opcion_D":"100 participantes solo en encuentros comunitarios","respuesta_correcta":"B"}]}},"EIC":{"Apoyo psicosocial":{"especificas":[{"numero_pregunta":11,"tema":"Frecuencia en EIC","pregunta":"En EIC, por GT, el profesional psicosocial lidera al mes:","opcion_A":"10 encuentros en el hogar","opcion_B":"12 encuentros en el hogar","opcion_C":"20 encuentros en el hogar","opcion_D":"24 encuentros en el hogar","respuesta_correcta":"C"}]},"Auxiliar administrativo":{"especificas":[{"numero_pregunta":10,"tema":"Particularidad en EIC","pregunta":"En EIC, para un GT estándar de 160 participantes:","opcion_A":"Siempre hay auxiliar administrativo de tiempo completo","opcion_B":"No se reconoce auxiliar administrativo en la estructura base","opcion_C":"Hay dos auxiliares administrativos","opcion_D":"El agente educativo asume formalmente ese cargo","respuesta_correcta":"B"},{"numero_pregunta":11,"tema":"EIC ampliado","pregunta":"Cuando EIC opera con 320 participantes, la guía reconoce:","opcion_A":"Un profesional administrativo y un coordinador pedagógico de tiempo completo","opcion_B":"Dos auxiliares pedagógicos adicionales solamente","opcion_C":"Un nutricionista menos y un administrativo","opcion_D":"Ningún ajuste en la estructura","respuesta_correcta":"A"}]},"Profesional de salud y nutrición":{"especificas":[{"numero_pregunta":12,"tema":"Frecuencia en EIC","pregunta":"En EIC, por GT, el profesional de salud y nutrición lidera al mes:","opcion_A":"8 encuentros en el hogar","opcion_B":"10 encuentros en el hogar","opcion_C":"20 encuentros en el hogar","opcion_D":"30 encuentros en el hogar","respuesta_correcta":"C"},{"numero_pregunta":14,"tema":"Práctica 17 en EIC","pregunta":"La práctica 17 se relaciona con:","opcion_A":"Comercialización agrícola a gran escala","opcion_B":"Autoabastecimiento alimentario para autoconsumo o trueque","opcion_C":"Escolarización temprana","opcion_D":"Actividad administrativa del GT","respuesta_correcta":"B"}]}},"EIH":{"Apoyo psicosocial":{"especificas":[{"numero_pregunta":10,"tema":"Frecuencia en EIH","pregunta":"En EIH, por cada UA, los profesionales psicosociales lideran mínimo al mes:","opcion_A":"1 encuentro en el hogar","opcion_B":"2 encuentros en el hogar","opcion_C":"3 encuentros en el hogar","opcion_D":"6 encuentros en el hogar","respuesta_correcta":"C"}]},"Auxiliar pedagógico":{"especificas":[{"numero_pregunta":9,"tema":"Ubicación del cargo","pregunta":"En EIH, el auxiliar pedagógico hace parte de:","opcion_A":"El equipo financiero del GT","opcion_B":"La dupla de atención junto con el agente educativo","opcion_C":"La coordinación regional","opcion_D":"El equipo de supervisión externa","respuesta_correcta":"B"},{"numero_pregunta":10,"tema":"Encuentros en el hogar","pregunta":"Según la guía, el auxiliar pedagógico en los encuentros en el hogar:","opcion_A":"Nunca participa","opcion_B":"Solo participa cuando lo piden las familias","opcion_C":"Acompaña según lo defina el equipo de trabajo","opcion_D":"Reemplaza siempre al agente educativo","respuesta_correcta":"C"},{"numero_pregunta":11,"tema":"Encuentros liderados por otros profesionales","pregunta":"Cuando un encuentro es liderado por psicosocial o salud y nutrición, el auxiliar pedagógico debe:","opcion_A":"Ausentarse para no duplicar funciones","opcion_B":"Acompañar el encuentro según la organización del servicio","opcion_C":"Limitarse a tomar asistencia","opcion_D":"Dirigir el componente clínico","respuesta_correcta":"B"},{"numero_pregunta":12,"tema":"Participación en encuentro grupal","pregunta":"En el encuentro grupal, el auxiliar pedagógico debe:","opcion_A":"Mantenerse solo en tareas administrativas","opcion_B":"Desarrollar la experiencia conjuntamente con el equipo","opcion_C":"Observar sin intervenir","opcion_D":"Definir en solitario el contenido pedagógico","respuesta_correcta":"B"},{"numero_pregunta":13,"tema":"Apoyo al proceso pedagógico","pregunta":"Una actuación adecuada del auxiliar pedagógico es:","opcion_A":"Preparar ambiente, materiales y apoyar la participación con sentido pedagógico","opcion_B":"Enfocarse solo en la logística","opcion_C":"Evitar la interacción con familias","opcion_D":"Cambiar el propósito del encuentro","respuesta_correcta":"A"},{"numero_pregunta":14,"tema":"Trabajo en equipo","pregunta":"¿Qué debe evitar el auxiliar pedagógico?","opcion_A":"Articularse con el agente educativo","opcion_B":"Comprender el sentido de la planeación","opcion_C":"Asumir un rol puramente operativo sin intención pedagógica","opcion_D":"Apoyar la preparación del ambiente","respuesta_correcta":"C"},{"numero_pregunta":15,"tema":"Buen desempeño","pregunta":"¿Cuál evidencia mejor desempeño del auxiliar pedagógico?","opcion_A":"Participación sensible, articulada y pedagógicamente intencionada","opcion_B":"Cumplir solo con asistencia y materiales","opcion_C":"Evitar responsabilidades en los encuentros","opcion_D":"Limitarse al registro de firmas","respuesta_correcta":"A"},{"numero_pregunta":49,"tema":"Auxiliar Pedagógico - Colaboración proyecto pedagógico","pregunta":"¿Cuál es el rol principal del Auxiliar Pedagógico en relación al proyecto pedagógico de la UA?","opcion_A":"Supervisar exclusivamente al agente educativo","opcion_B":"Colaborar en la ejecución e implementación del proyecto","opcion_C":"Tomar decisiones pedagógicas sin consultar","opcion_D":"Realizar tareas exclusivamente administrativas","respuesta_correcta":"B"},{"numero_pregunta":52,"tema":"Auxiliar Pedagógico - Habilidades pedagógicas","pregunta":"¿Cuál es una habilidad clave del Auxiliar Pedagógico para el desempeño de su rol?","opcion_A":"Capacidad de manejo financiero","opcion_B":"Diseño de experiencias pedagógicas (juego, arte, literatura, exploración)","opcion_C":"Gestión exclusiva de recursos","opcion_D":"Supervisión administrativa","respuesta_correcta":"B"},{"numero_pregunta":54,"tema":"Auxiliar Pedagógico - Observación y evaluación","pregunta":"¿Qué debe hacer el Auxiliar Pedagógico en relación a la observación del desarrollo infantil?","opcion_A":"No participa en observación","opcion_B":"Observar, evaluar y documentar procesos de desarrollo","opcion_C":"Solo registra asistencia","opcion_D":"Proporciona únicamente información al agente educativo","respuesta_correcta":"B"}]},"Profesional de salud y nutrición":{"especificas":[{"numero_pregunta":11,"tema":"Frecuencia en EIH","pregunta":"En EIH, por cada UA, el profesional de salud y nutrición lidera mínimo al mes:","opcion_A":"1 encuentro en el hogar","opcion_B":"3 encuentros en el hogar","opcion_C":"5 encuentros en el hogar","opcion_D":"10 encuentros en el hogar","respuesta_correcta":"A"}]},"Agente educativo":{"especificas":[{"numero_pregunta":45,"tema":"Agente Educativo - Prácticas orientadoras","pregunta":"¿Cuántas prácticas orientadoras son reconocidas en el marco normativo de educación inicial para el hogar?","opcion_A":"8 prácticas","opcion_B":"12 prácticas","opcion_C":"16 prácticas","opcion_D":"20 prácticas","respuesta_correcta":"C"}]},"Auxiliar administrativo":{"especificas":[{"numero_pregunta":55,"tema":"Auxiliar Administrativo - Sistematización información","pregunta":"¿Cuál es una de las funciones principales del Auxiliar Administrativo en EIH?","opcion_A":"Docencia directa a participantes","opcion_B":"Sistematizar información de niñas, niños y familias","opcion_C":"Tomar decisiones pedagógicas","opcion_D":"Realizar evaluaciones psicológicas","respuesta_correcta":"B"},{"numero_pregunta":56,"tema":"Auxiliar Administrativo - Reporte inobservancia","pregunta":"¿Según la Ley 1098 art. 41 num. 4, qué debe reportar el Auxiliar Administrativo?","opcion_A":"Solo datos de asistencia","opcion_B":"Presuntos casos de inobservancia de derechos","opcion_C":"Únicamente información financiera","opcion_D":"Quejas administrativas","respuesta_correcta":"B"},{"numero_pregunta":57,"tema":"Auxiliar Administrativo - Reporte de accidentes","pregunta":"¿Qué debe hacer el Auxiliar Administrativo ante un accidente en la UA?","opcion_A":"Ignorar el evento","opcion_B":"Reportar al coordinador según protocolos","opcion_C":"Solo informar verbalmente","opcion_D":"Documentar sin comunicar","respuesta_correcta":"B"},{"numero_pregunta":59,"tema":"Auxiliar Administrativo - Archivo SIGA","pregunta":"¿Qué debe garantizar el Auxiliar Administrativo respecto al archivo de información en SIGA?","opcion_A":"No tiene responsabilidad en archivo","opcion_B":"Organizar y mantener archivo digital y físico actualizado","opcion_C":"Solo crear carpetas sin orden","opcion_D":"Archivar sin documentación","respuesta_correcta":"B"},{"numero_pregunta":62,"tema":"Auxiliar Administrativo - Habilidades comunicación","pregunta":"¿Qué habilidades en comunicación debe demostrar el Auxiliar Administrativo?","opcion_A":"Comunicación unidireccional","opcion_B":"Comunicación clara, asertiva y relaciones saludables interdisciplinarias","opcion_C":"Comunicación únicamente escrita","opcion_D":"Comunicación informal sin protocolos","respuesta_correcta":"B"}]}}};
+// ============================================================
+//  COMPETENCIAS Y 27 INDICADORES (del formato PDF)
+// ============================================================
+const COMPETENCIAS = [
+  {
+    id: "adaptabilidad",
+    nombre: "ADAPTABILIDAD",
+    emoji: "🔄",
+    max: 20, // 4 indicadores × 5
+    indicadores: [
+      "Asume responsabilidades con alto grado de disposición.",
+      "Se adapta fácilmente a los cambios.",
+      "Tiene buen criterio para asumir los problemas.",
+      "Cuando tiene que desarrollar tareas nuevas se siente muy motivado."
+    ]
+  },
+  {
+    id: "compromiso",
+    nombre: "COMPROMISO Y RESPONSABILIDAD",
+    emoji: "✅",
+    max: 35, // 7 × 5
+    indicadores: [
+      "Controla la calidad de su trabajo.",
+      "Tiene la capacidad de supervisar ciertos aspectos de su trabajo.",
+      "Porta adecuadamente el uniforme y cuida de su presentación personal.",
+      "Cumple con el horario de trabajo.",
+      "Cumple con los objetivos que se le asignan.",
+      "Cumple con los tiempos de entrega propuestos.",
+      "Se esfuerza más si la situación lo requiere."
+    ]
+  },
+  {
+    id: "resolucion",
+    nombre: "RESOLUCIÓN DE PROBLEMAS",
+    emoji: "💡",
+    max: 20, // 4 × 5
+    indicadores: [
+      "Aporta ideas o soluciones que benefician al equipo de trabajo.",
+      "Aporta ideas y soluciones que benefician a la empresa.",
+      "Tiene gran capacidad resolutiva.",
+      "Ayuda a sus compañeros a resolver los problemas."
+    ]
+  },
+  {
+    id: "formacion",
+    nombre: "FORMACIÓN Y EXPERIENCIA",
+    emoji: "📚",
+    max: 20, // 4 × 5
+    indicadores: [
+      "Domina las funciones de su puesto de trabajo.",
+      "Tiene los conocimientos necesarios y suficientes para realizar las tareas propias de su puesto.",
+      "Aplica los conocimientos adquiridos según su experiencia laboral, cumpliendo con todos los procesos y procedimientos que aplican al cargo.",
+      "Su desempeño cumple con las expectativas del puesto."
+    ]
+  },
+  {
+    id: "relaciones",
+    nombre: "RELACIONES INTERPERSONALES",
+    emoji: "🤝",
+    max: 20, // 4 × 5
+    indicadores: [
+      "Expresa sus inquietudes en forma constructiva y las comunica a quien corresponde, inculcando los valores de la organización para tomar las acciones o correctivos necesarios.",
+      "Trata a los demás con respeto.",
+      "Es empático con sus compañeros de trabajo.",
+      "Integra a todos en el equipo de trabajo y respeta sus opiniones."
+    ]
+  },
+  {
+    id: "equipo",
+    nombre: "TRABAJO EN EQUIPO",
+    emoji: "👥",
+    max: 20, // 4 × 5
+    indicadores: [
+      "Coopera efectivamente con sus compañeros de trabajo, teniendo una actitud positiva y proactiva.",
+      "Ofrece ayuda sin que se la soliciten.",
+      "Se preocupa por ayudar a conseguir los resultados esperados por el equipo.",
+      "Trabaja bien con distintos tipos de persona."
+    ]
+  }
+];
 
-// ─────────────────────────────────────────────────────────────
-//  ESTADO
-// ─────────────────────────────────────────────────────────────
+// Etiquetas de la escala Likert
+const LIKERT_LABELS = ["","Nunca","C.nunca","A veces","C.siempre","Siempre"];
+
+// ============================================================
+//  DATOS DEL QUIZ DE CONOCIMIENTO (por cargo y modalidad)
+// ============================================================
+const DATA = {"Ambos":{"Agente educativo":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":3,"tema":"Estrategias de atención","pregunta":"¿Cuál combinación es correcta?","opcion_A":"EIH: encuentro institucional; EIC: encuentro escolar","opcion_B":"EIH: encuentro en el hogar y encuentro grupal; EIC: encuentro en el hogar y encuentro comunitario","opcion_C":"EIH: solo encuentros virtuales; EIC: solo visitas domiciliarias","opcion_D":"Ambos servicios trabajan únicamente mediante encuentros comunitarios","respuesta_correcta":"B"},{"numero_pregunta":4,"tema":"Sentido de las prácticas","pregunta":"En las guías, las prácticas y acciones orientadoras se entienden como:","opcion_A":"Temas fijos que deben repetirse en todas las sesiones","opcion_B":"Listados de actividades para diligenciar formatos","opcion_C":"Interrelaciones cotidianas de cuidado y crianza que se fortalecen pedagógicamente","opcion_D":"Manuales cerrados que no deben adaptarse al territorio","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":9,"tema":"Base de la planeación","pregunta":"La planeación del agente educativo debe construirse a partir de:","opcion_A":"Temas predeterminados sin relación con el contexto","opcion_B":"Prácticas priorizadas, caracterización y particularidades familiares y territoriales","opcion_C":"Actividades copiadas de otros servicios","opcion_D":"Únicamente de la disponibilidad de materiales","respuesta_correcta":"B"},{"numero_pregunta":10,"tema":"Sentido del encuentro en el hogar","pregunta":"El encuentro en el hogar busca principalmente:","opcion_A":"Evaluar a la familia desde una lógica sancionatoria","opcion_B":"Fortalecer prácticas de cuidado y crianza desde experiencias intencionadas","opcion_C":"Entregar únicamente recomendaciones escritas","opcion_D":"Reemplazar el vínculo entre familia y niño","respuesta_correcta":"B"},{"numero_pregunta":11,"tema":"Encuentros grupales o comunitarios","pregunta":"En estos encuentros, el agente educativo debe:","opcion_A":"Desarrollar experiencias con juego, arte, literatura, exploración y reflexión con familias","opcion_B":"Limitarse a dar una charla magistral","opcion_C":"Suspender la participación de la comunidad","opcion_D":"Aplicar solo actividades manuales repetitivas","respuesta_correcta":"A"},{"numero_pregunta":12,"tema":"Error de planeación","pregunta":"¿Cuál práctica sería incorrecta?","opcion_A":"Relacionar la planeación con la vida cotidiana","opcion_B":"Adaptar experiencias al territorio","opcion_C":"Tratar las prácticas como temas aislados y desarticulados","opcion_D":"Dialogar con los saberes familiares","respuesta_correcta":"C"},{"numero_pregunta":13,"tema":"Seguimiento al desarrollo","pregunta":"El seguimiento al desarrollo infantil debe hacerse:","opcion_A":"Solo cuando exista dificultad evidente","opcion_B":"Según instrumentos y tiempos definidos, con lectura contextual","opcion_C":"Únicamente al finalizar el contrato","opcion_D":"De forma verbal y sin registro","respuesta_correcta":"B"},{"numero_pregunta":14,"tema":"Relación con las familias","pregunta":"Frente a los saberes de las familias, el agente educativo debe:","opcion_A":"Descalificarlos si no coinciden con su criterio","opcion_B":"Reconocerlos y dialogar con ellos para fortalecer prácticas","opcion_C":"Sustituirlos completamente por instrucciones técnicas","opcion_D":"Evitar abordarlos en el encuentro","respuesta_correcta":"B"},{"numero_pregunta":28,"tema":"Frecuencia encuentros grupales EIH","pregunta":"¿Cuántos encuentros grupales se deben realizar por semana en cada Unidad de Atención?","opcion_A":"1 encuentro grupal","opcion_B":"2 encuentros grupales","opcion_C":"3 encuentros grupales","opcion_D":"4 encuentros grupales","respuesta_correcta":"A"},{"numero_pregunta":43,"tema":"Caracterización","pregunta":"¿Cuál es el propósito de la caracterización que realiza el Agente Educativo?","opcion_A":"Establecer criterios de exclusión","opcion_B":"Identificar características para potenciar desarrollo integral","opcion_C":"Recopilar información para reportes administrativos","opcion_D":"Clasificar participantes por capacidades","respuesta_correcta":"B"},{"numero_pregunta":47,"tema":"Trabajo colaborativo","pregunta":"¿Con quiénes debe trabajar colaborativamente el Agente Educativo para garantizar coherencia en la atención?","opcion_A":"Solo con el coordinador","opcion_B":"Con auxiliar pedagógico, profesionales psicosocial y de salud/nutrición","opcion_C":"Únicamente con padres de familia","opcion_D":"De manera independiente","respuesta_correcta":"B"}]},"Apoyo psicosocial":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":9,"tema":"Sentido del rol","pregunta":"El profesional psicosocial en el encuentro en el hogar debe:","opcion_A":"Enfocarse solo en diligenciar formatos","opcion_B":"Desarrollar acciones intencionadas para fortalecer cuidado, crianza y bienestar familiar","opcion_C":"Sustituir al coordinador","opcion_D":"Atender solo casos críticos","respuesta_correcta":"B"},{"numero_pregunta":12,"tema":"Intervención adecuada","pregunta":"Una intervención adecuada del apoyo psicosocial privilegia:","opcion_A":"El señalamiento de errores familiares","opcion_B":"El fortalecimiento de interacciones sensibles y trato respetuoso","opcion_C":"La sanción por incumplimientos","opcion_D":"La atención descontextualizada","respuesta_correcta":"B"},{"numero_pregunta":14,"tema":"Trabajo interdisciplinario","pregunta":"¿Cuál actuación sería incorrecta en el rol psicosocial?","opcion_A":"Coordinar con el equipo","opcion_B":"Integrar su orientación al propósito del encuentro","opcion_C":"Trabajar separado del sentido pedagógico del servicio","opcion_D":"Reconocer el contexto familiar","respuesta_correcta":"C"},{"numero_pregunta":15,"tema":"Protección de derechos","pregunta":"Si durante el acompañamiento identifica una alerta de vulneración, debe:","opcion_A":"Omitirla si no afecta la asistencia","opcion_B":"Documentar, orientar y articular acciones de protección pertinentes","opcion_C":"Esperar a la siguiente visita sin registro","opcion_D":"Limitarse a comentar informalmente el caso","respuesta_correcta":"B"},{"numero_pregunta":63,"tema":"Liderazgo componente familia","pregunta":"¿Cuál es la responsabilidad principal del Profesional Psicosocial en EIH?","opcion_A":"Enseñanza directa de contenidos","opcion_B":"Liderar el componente de familia, comunidad y redes sociales","opcion_C":"Gestión exclusiva de recursos","opcion_D":"Supervisión administrativa","respuesta_correcta":"B"},{"numero_pregunta":66,"tema":"Rutas y protocolos","pregunta":"¿Qué debe hacer el Profesional Psicosocial ante presuntos casos de violencia o vulneración?","opcion_A":"Ignorar los casos","opcion_B":"Activar rutas y protocolos según orientaciones institucionales","opcion_C":"Solo informar verbalmente","opcion_D":"Intentar resolver independientemente","respuesta_correcta":"B"}]},"Auxiliar administrativo":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":12,"tema":"Función general","pregunta":"Una función coherente del apoyo administrativo dentro del servicio es:","opcion_A":"Liderar el proceso pedagógico","opcion_B":"Apoyar organización documental, registros, flujos administrativos y soporte operativo","opcion_C":"Reemplazar la atención a familias","opcion_D":"Definir prácticas pedagógicas","respuesta_correcta":"B"},{"numero_pregunta":13,"tema":"Calidad de la gestión","pregunta":"Desde el componente administrativo y de gestión, ¿qué aporta un buen desempeño del cargo?","opcion_A":"Registros oportunos, soporte organizado y flujo administrativo confiable","opcion_B":"Decisiones pedagógicas unilaterales","opcion_C":"Reducción de encuentros en territorio","opcion_D":"Sustitución de las funciones del coordinador","respuesta_correcta":"A"},{"numero_pregunta":14,"tema":"Relación con el equipo","pregunta":"El apoyo administrativo debe relacionarse con el equipo:","opcion_A":"Solo cuando haya auditoría","opcion_B":"Como soporte articulado a la operación y a los requerimientos del servicio","opcion_C":"Sin conocer la lógica general del servicio","opcion_D":"Limitándose a archivo muerto","respuesta_correcta":"B"},{"numero_pregunta":15,"tema":"Error de desempeño","pregunta":"¿Cuál sería un error claro en este cargo?","opcion_A":"Mantener soportes organizados","opcion_B":"Garantizar oportunidad en la gestión documental","opcion_C":"Desconectarse de los requerimientos operativos del servicio y afectar el flujo de registros","opcion_D":"Apoyar procesos administrativos del GT","respuesta_correcta":"C"},{"numero_pregunta":55,"tema":"Sistematización de información","pregunta":"¿Cuál es una de las funciones principales del Auxiliar Administrativo en EIH?","opcion_A":"Docencia directa a participantes","opcion_B":"Sistematizar información de niñas, niños y familias","opcion_C":"Tomar decisiones pedagógicas","opcion_D":"Realizar evaluaciones psicológicas","respuesta_correcta":"B"},{"numero_pregunta":56,"tema":"Reporte inobservancia","pregunta":"¿Qué debe reportar el Auxiliar Administrativo según la Ley 1098?","opcion_A":"Solo datos de asistencia","opcion_B":"Presuntos casos de inobservancia de derechos","opcion_C":"Únicamente información financiera","opcion_D":"Quejas administrativas","respuesta_correcta":"B"},{"numero_pregunta":62,"tema":"Habilidades de comunicación","pregunta":"¿Qué habilidades en comunicación debe demostrar el Auxiliar Administrativo?","opcion_A":"Comunicación unidireccional","opcion_B":"Comunicación clara, asertiva y relaciones saludables interdisciplinarias","opcion_C":"Comunicación únicamente escrita","opcion_D":"Comunicación informal sin protocolos","respuesta_correcta":"B"}]},"Auxiliar pedagógico":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":9,"tema":"Ubicación del cargo","pregunta":"En EIH, el auxiliar pedagógico hace parte de:","opcion_A":"El equipo financiero del GT","opcion_B":"La dupla de atención junto con el agente educativo","opcion_C":"La coordinación regional","opcion_D":"El equipo de supervisión externa","respuesta_correcta":"B"},{"numero_pregunta":10,"tema":"Encuentros en el hogar","pregunta":"Según la guía, el auxiliar pedagógico en los encuentros en el hogar:","opcion_A":"Nunca participa","opcion_B":"Solo participa cuando lo piden las familias","opcion_C":"Acompaña según lo defina el equipo de trabajo","opcion_D":"Reemplaza siempre al agente educativo","respuesta_correcta":"C"},{"numero_pregunta":12,"tema":"Participación en encuentro grupal","pregunta":"En el encuentro grupal, el auxiliar pedagógico debe:","opcion_A":"Mantenerse solo en tareas administrativas","opcion_B":"Desarrollar la experiencia conjuntamente con el equipo","opcion_C":"Observar sin intervenir","opcion_D":"Definir en solitario el contenido pedagógico","respuesta_correcta":"B"},{"numero_pregunta":13,"tema":"Apoyo al proceso pedagógico","pregunta":"Una actuación adecuada del auxiliar pedagógico es:","opcion_A":"Preparar ambiente, materiales y apoyar la participación con sentido pedagógico","opcion_B":"Enfocarse solo en la logística","opcion_C":"Evitar la interacción con familias","opcion_D":"Cambiar el propósito del encuentro","respuesta_correcta":"A"},{"numero_pregunta":49,"tema":"Proyecto pedagógico","pregunta":"¿Cuál es el rol principal del Auxiliar Pedagógico en relación al proyecto pedagógico de la UA?","opcion_A":"Supervisar exclusivamente al agente educativo","opcion_B":"Colaborar en la ejecución e implementación del proyecto","opcion_C":"Tomar decisiones pedagógicas sin consultar","opcion_D":"Realizar tareas exclusivamente administrativas","respuesta_correcta":"B"},{"numero_pregunta":52,"tema":"Habilidades pedagógicas","pregunta":"¿Cuál es una habilidad clave del Auxiliar Pedagógico para el desempeño de su rol?","opcion_A":"Capacidad de manejo financiero","opcion_B":"Diseño de experiencias pedagógicas (juego, arte, literatura, exploración)","opcion_C":"Gestión exclusiva de recursos","opcion_D":"Supervisión administrativa","respuesta_correcta":"B"}]},"Coordinador":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":7,"tema":"Enfoque diferencial","pregunta":"¿Qué exige el enfoque diferencial en estos servicios?","opcion_A":"Aplicar la misma estrategia a todas las familias","opcion_B":"Ajustar la atención según condiciones personales, sociales, culturales y territoriales de los participantes","opcion_C":"Priorizar únicamente a quienes tengan mejor asistencia","opcion_D":"Eliminar la participación familiar para facilitar la operación","respuesta_correcta":"B"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":11,"tema":"Acompañamiento técnico","pregunta":"El propósito principal del acompañamiento del coordinador al equipo es:","opcion_A":"Vigilar asistencia sin retroalimentar","opcion_B":"Reemplazar al agente educativo en los encuentros","opcion_C":"Cualificar al talento humano mediante observación, análisis y retroalimentación","opcion_D":"Limitarse a recoger formatos firmados","respuesta_correcta":"C"},{"numero_pregunta":13,"tema":"Articulación del equipo","pregunta":"¿Cuál es una responsabilidad central del coordinador frente al equipo interdisciplinario?","opcion_A":"Separar totalmente los componentes para facilitar el control","opcion_B":"Propiciar planeación conjunta, claridad de roles y coherencia técnica","opcion_C":"Limitar la participación del talento humano en las decisiones","opcion_D":"Concentrarse solo en la logística","respuesta_correcta":"B"},{"numero_pregunta":14,"tema":"Seguimiento a la calidad","pregunta":"¿Qué debe priorizar el coordinador en el seguimiento del servicio?","opcion_A":"Solo la puntualidad del equipo","opcion_B":"Solo la entrega de papelería","opcion_C":"Calidad de la atención, planeación, registros, articulación y cumplimiento de componentes","opcion_D":"Solo la cantidad de encuentros realizados","respuesta_correcta":"C"},{"numero_pregunta":20,"tema":"Estructura GT en EIH","pregunta":"¿Cuántos Agentes Educativos (GA) conforman un Grupo Territorial estándar en EIH?","opcion_A":"3 GA","opcion_B":"6 GA","opcion_C":"8 GA","opcion_D":"10 GA","respuesta_correcta":"B"},{"numero_pregunta":35,"tema":"Liderazgo y coordinación","pregunta":"¿Cuál es la responsabilidad principal del Coordinador en el servicio?","opcion_A":"Enseñanza directa a los participantes","opcion_B":"Liderazgo de la implementación y coordinación del talento humano","opcion_C":"Manejo exclusivo de salud y nutrición","opcion_D":"Realización de encuentros en el hogar","respuesta_correcta":"B"},{"numero_pregunta":38,"tema":"Rutas de atención","pregunta":"¿Cuál es el rol del Coordinador ante casos de amenaza o vulneración de derechos?","opcion_A":"Investigar de manera independiente","opcion_B":"Coordinar la activación de rutas según protocolos","opcion_C":"Ignorar los casos identificados","opcion_D":"Solo informar verbalmente","respuesta_correcta":"B"},{"numero_pregunta":39,"tema":"Plan de cualificación","pregunta":"¿Qué debe incluir el plan de cualificación del talento humano que lidera el Coordinador?","opcion_A":"Solo temas pedagógicos","opcion_B":"Acciones de fortalecimiento en educación inicial, desarrollo infantil y políticas de estado","opcion_C":"Exclusivamente temas administrativos","opcion_D":"Solo procesos de selección","respuesta_correcta":"B"}]},"Profesional de salud y nutrición":{"comunes":[{"numero_pregunta":1,"tema":"Propósito del servicio","pregunta":"¿Cuál es el propósito central de los servicios de Educación Inicial en el Hogar y Educación Inicial Campesina?","opcion_A":"Ejecutar actividades recreativas mensuales para las familias","opcion_B":"Potenciar el desarrollo integral de niñas, niños y gestantes mediante prácticas de cuidado, crianza y experiencias pedagógicas en el marco de la atención integral","opcion_C":"Reemplazar la responsabilidad principal de la familia en la crianza","opcion_D":"Priorizar únicamente el seguimiento nutricional de los participantes","respuesta_correcta":"B"},{"numero_pregunta":2,"tema":"Población priorizada","pregunta":"¿Cuál afirmación describe mejor la población priorizada de estos servicios?","opcion_A":"Ambos servicios atienden únicamente a niñas y niños de 3 a 5 años","opcion_B":"EIH atiende solo gestantes y EIC solo niños escolarizados","opcion_C":"EIH prioriza 7 meses a 2 años 11 meses con excepciones; EIC atiende gestantes y niñas y niños hasta 4 años 11 meses, ampliable hasta 5 años 11 meses cuando no haya transición cercana","opcion_D":"Ambos servicios atienden exclusivamente a niñas y niños de zonas urbanas","respuesta_correcta":"C"},{"numero_pregunta":5,"tema":"Planeación pedagógica","pregunta":"Una planeación pertinente del servicio debe partir principalmente de:","opcion_A":"Actividades genéricas descargadas de internet","opcion_B":"La improvisación del equipo según el día","opcion_C":"Caracterización, prácticas priorizadas, contexto familiar y territorial","opcion_D":"Preferencias personales del talento humano","respuesta_correcta":"C"},{"numero_pregunta":6,"tema":"Trabajo interdisciplinario","pregunta":"¿Cómo debe darse la participación de los distintos perfiles en el servicio?","opcion_A":"Cada uno trabaja por separado sin relación con los demás","opcion_B":"Solo el coordinador toma decisiones técnicas","opcion_C":"De manera articulada, con propósitos compartidos y sin fragmentar el encuentro","opcion_D":"El profesional psicosocial dirige todo el proceso pedagógico","respuesta_correcta":"C"},{"numero_pregunta":8,"tema":"Componentes de calidad","pregunta":"¿Cuál opción nombra correctamente los componentes de calidad?","opcion_A":"Cobertura, matrícula, supervisión, infraestructura y alimentación","opcion_B":"Familia, comunidad y redes sociales; salud y nutrición; proceso pedagógico; talento humano; ambientes educativos y protectores; administrativo y de gestión","opcion_C":"Diagnóstico, presupuesto, nómina, archivo y compras","opcion_D":"Planeación, ejecución, cierre y auditoría","respuesta_correcta":"B"}],"especificas":[{"numero_pregunta":9,"tema":"Propósito del rol","pregunta":"En los encuentros en el hogar, el profesional de salud y nutrición debe:","opcion_A":"Realizar únicamente control clínico","opcion_B":"Orientar prácticas de cuidado, alimentación, bienestar y salud según necesidades del hogar","opcion_C":"Sustituir el proceso pedagógico","opcion_D":"Intervenir solo si hay una urgencia","respuesta_correcta":"B"},{"numero_pregunta":10,"tema":"Articulación","pregunta":"Su participación en el servicio debe ser:","opcion_A":"Aislada del proceso pedagógico","opcion_B":"Exclusivamente documental","opcion_C":"Integrada al trabajo con familias y al propósito general del servicio","opcion_D":"Restringida a talleres masivos","respuesta_correcta":"C"},{"numero_pregunta":13,"tema":"Consejería pertinente","pregunta":"¿Cuál acción es coherente con la guía de salud y nutrición?","opcion_A":"Dar recomendaciones generales sin mirar contexto","opcion_B":"Orientar según edad, gestación, prácticas familiares y territorio","opcion_C":"Limitarse a entregar folletos","opcion_D":"Remitir todos los temas sin intervención inicial","respuesta_correcta":"B"},{"numero_pregunta":15,"tema":"Respuesta ante necesidad identificada","pregunta":"Si el profesional identifica una necesidad que supera su orientación inmediata, debe:","opcion_A":"Ignorarla si no estaba programada","opcion_B":"Activar articulaciones y rutas pertinentes dentro del servicio","opcion_C":"Esperar el cierre mensual","opcion_D":"Dejar la responsabilidad solo a la familia","respuesta_correcta":"B"},{"numero_pregunta":72,"tema":"Tamizaje nutricional","pregunta":"¿Qué incluye el tamizaje nutricional que realiza el Profesional de Salud y Nutrición?","opcion_A":"Solo recolección de datos","opcion_B":"Evaluación del estado nutricional y medidas antropométricas","opcion_C":"Únicamente registros administrativos","opcion_D":"Diagnósticos médicos","respuesta_correcta":"B"},{"numero_pregunta":74,"tema":"Minuta patrón","pregunta":"¿Qué es la 'minuta patrón' que debe vigilar el Profesional de Salud y Nutrición?","opcion_A":"Un documento administrativo","opcion_B":"Plan de alimentación diaria según recomendaciones nutricionales ICBF","opcion_C":"Solo listado de alimentos permitidos","opcion_D":"Registro de compras","respuesta_correcta":"B"},{"numero_pregunta":77,"tema":"Desnutrición aguda","pregunta":"¿Cuál es el protocolo del Profesional ante identificación de desnutrición aguda?","opcion_A":"Documentar sin intervenir","opcion_B":"Canalizar a servicios de salud inmediatamente","opcion_C":"Solo informar a padres verbalmente","opcion_D":"Esperar seguimiento administrativo","respuesta_correcta":"B"}]}},"EIH/EIC":{"Agente educativo":{"especificas":[{"numero_pregunta":15,"tema":"Diferencia EIH/EIC","pregunta":"¿Cuál afirmación sobre las prácticas orientadoras es correcta?","opcion_A":"La práctica 17 aplica a ambos servicios","opcion_B":"En EIC se incorpora la práctica 17 de autoabastecimiento; en EIH no aplica","opcion_C":"Ninguno de los servicios trabaja prácticas","opcion_D":"EIH tiene 17 prácticas y EIC 16","respuesta_correcta":"B"}]},"Auxiliar administrativo":{"especificas":[{"numero_pregunta":9,"tema":"Presencia del cargo","pregunta":"¿Cuál afirmación es correcta sobre el auxiliar administrativo?","opcion_A":"Está reconocido en EIH por GT de 300 participantes","opcion_B":"Está reconocido en todos los GT de EIC de 160 participantes","opcion_C":"Reemplaza al coordinador pedagógico","opcion_D":"Solo existe en la supervisión regional","respuesta_correcta":"A"}]},"Coordinador":{"especificas":[{"numero_pregunta":9,"tema":"Estructura GT en EIH","pregunta":"En Educación Inicial en el Hogar, un GT estándar está conformado por:","opcion_A":"160 participantes y 8 UCA","opcion_B":"300 participantes, 6 GA, cada GA con agente educativo y auxiliar pedagógico","opcion_C":"80 participantes y 4 aulas","opcion_D":"320 participantes con solo un agente educativo","respuesta_correcta":"B"},{"numero_pregunta":10,"tema":"Estructura GT en EIC","pregunta":"En Educación Inicial Campesina, un GT estándar corresponde a:","opcion_A":"300 participantes con 6 GA","opcion_B":"160 participantes con 8 UCA","opcion_C":"50 participantes con una sola unidad","opcion_D":"100 participantes solo en encuentros comunitarios","respuesta_correcta":"B"}]}},"EIC":{"Apoyo psicosocial":{"especificas":[{"numero_pregunta":11,"tema":"Frecuencia en EIC","pregunta":"En EIC, por GT, el profesional psicosocial lidera al mes:","opcion_A":"10 encuentros en el hogar","opcion_B":"12 encuentros en el hogar","opcion_C":"20 encuentros en el hogar","opcion_D":"24 encuentros en el hogar","respuesta_correcta":"C"}]},"Auxiliar administrativo":{"especificas":[{"numero_pregunta":10,"tema":"Particularidad en EIC","pregunta":"En EIC, para un GT estándar de 160 participantes:","opcion_A":"Siempre hay auxiliar administrativo de tiempo completo","opcion_B":"No se reconoce auxiliar administrativo en la estructura base","opcion_C":"Hay dos auxiliares administrativos","opcion_D":"El agente educativo asume formalmente ese cargo","respuesta_correcta":"B"},{"numero_pregunta":11,"tema":"EIC ampliado","pregunta":"Cuando EIC opera con 320 participantes, la guía reconoce:","opcion_A":"Un profesional administrativo y un coordinador pedagógico de tiempo completo","opcion_B":"Dos auxiliares pedagógicos adicionales solamente","opcion_C":"Un nutricionista menos y un administrativo","opcion_D":"Ningún ajuste en la estructura","respuesta_correcta":"A"}]},"Profesional de salud y nutrición":{"especificas":[{"numero_pregunta":12,"tema":"Frecuencia en EIC","pregunta":"En EIC, por GT, el profesional de salud y nutrición lidera al mes:","opcion_A":"8 encuentros en el hogar","opcion_B":"10 encuentros en el hogar","opcion_C":"20 encuentros en el hogar","opcion_D":"30 encuentros en el hogar","respuesta_correcta":"C"},{"numero_pregunta":14,"tema":"Práctica 17 en EIC","pregunta":"La práctica 17 en EIC se relaciona con:","opcion_A":"Comercialización agrícola a gran escala","opcion_B":"Autoabastecimiento alimentario para autoconsumo o trueque","opcion_C":"Escolarización temprana","opcion_D":"Actividad administrativa del GT","respuesta_correcta":"B"}]}},"EIH":{"Auxiliar pedagógico":{"especificas":[{"numero_pregunta":11,"tema":"Encuentros liderados por otros profesionales","pregunta":"Cuando un encuentro es liderado por psicosocial o salud y nutrición, el auxiliar pedagógico debe:","opcion_A":"Ausentarse para no duplicar funciones","opcion_B":"Acompañar el encuentro según la organización del servicio","opcion_C":"Limitarse a tomar asistencia","opcion_D":"Dirigir el componente clínico","respuesta_correcta":"B"},{"numero_pregunta":15,"tema":"Buen desempeño","pregunta":"¿Cuál evidencia mejor desempeño del auxiliar pedagógico?","opcion_A":"Participación sensible, articulada y pedagógicamente intencionada","opcion_B":"Cumplir solo con asistencia y materiales","opcion_C":"Evitar responsabilidades en los encuentros","opcion_D":"Limitarse al registro de firmas","respuesta_correcta":"A"},{"numero_pregunta":45,"tema":"Prácticas orientadoras EIH","pregunta":"¿Cuántas prácticas orientadoras son reconocidas en el marco normativo para EIH?","opcion_A":"8 prácticas","opcion_B":"12 prácticas","opcion_C":"16 prácticas","opcion_D":"20 prácticas","respuesta_correcta":"C"}]},"Apoyo psicosocial":{"especificas":[{"numero_pregunta":10,"tema":"Frecuencia en EIH","pregunta":"En EIH, por cada UA, los profesionales psicosociales lideran mínimo al mes:","opcion_A":"1 encuentro en el hogar","opcion_B":"2 encuentros en el hogar","opcion_C":"3 encuentros en el hogar","opcion_D":"6 encuentros en el hogar","respuesta_correcta":"C"}]},"Profesional de salud y nutrición":{"especificas":[{"numero_pregunta":11,"tema":"Frecuencia en EIH","pregunta":"En EIH, por cada UA, el profesional de salud y nutrición lidera mínimo al mes:","opcion_A":"1 encuentro en el hogar","opcion_B":"3 encuentros en el hogar","opcion_C":"5 encuentros en el hogar","opcion_D":"10 encuentros en el hogar","respuesta_correcta":"A"}]},"Agente educativo":{"especificas":[{"numero_pregunta":45,"tema":"Prácticas orientadoras EIH","pregunta":"¿Cuántas prácticas orientadoras son reconocidas en el marco normativo de educación inicial para el hogar?","opcion_A":"8 prácticas","opcion_B":"12 prácticas","opcion_C":"16 prácticas","opcion_D":"20 prácticas","respuesta_correcta":"C"}]},"Auxiliar administrativo":{"especificas":[{"numero_pregunta":57,"tema":"Reporte de accidentes","pregunta":"¿Qué debe hacer el Auxiliar Administrativo ante un accidente en la UA?","opcion_A":"Ignorar el evento","opcion_B":"Reportar al coordinador según protocolos","opcion_C":"Solo informar verbalmente","opcion_D":"Documentar sin comunicar","respuesta_correcta":"B"},{"numero_pregunta":59,"tema":"Archivo SIGA","pregunta":"¿Qué debe garantizar el Auxiliar Administrativo respecto al archivo en SIGA?","opcion_A":"No tiene responsabilidad en archivo","opcion_B":"Organizar y mantener archivo digital y físico actualizado","opcion_C":"Solo crear carpetas sin orden","opcion_D":"Archivar sin documentación","respuesta_correcta":"B"}]}}};
+
+// ============================================================
+//  ESTADO DE LA APLICACIÓN
+// ============================================================
 let APP = {
-  nombre:"", doc:"", tipoDoc:"", telefono:"", cargo:"", modalidad:"",
-  questions:[], idx:0, answers:{},
-  t0:null, timerRef:null
+  // Datos personales
+  nombre:"", tipoDoc:"", doc:"", telefono:"", cargo:"", modalidad:"",
+  // Desempeño: ratings[competIdx][indicadorIdx] = 1-5
+  ratings: COMPETENCIAS.map(c => new Array(c.indicadores.length).fill(0)),
+  // Quiz
+  questions:[], answers:[], currentQ:0, t0:0,
+  // Resultado final
+  desempeno:null, quiz:null
 };
 
-// ─────────────────────────────────────────────────────────────
-//  NAVEGACIÓN
-// ─────────────────────────────────────────────────────────────
-function showScreen(id){
+// ============================================================
+//  UTILIDADES
+// ============================================================
+function irA(id){
   document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
   window.scrollTo(0,0);
 }
 
-// ─────────────────────────────────────────────────────────────
-//  CONSTRUIR PREGUNTAS según cargo + modalidad
-// ─────────────────────────────────────────────────────────────
+function calcNivel(pts){
+  if(pts>120) return {label:"SOBRESALIENTE",cls:"level-sobre",emoji:"🏆"};
+  if(pts>=81)  return {label:"SATISFACTORIO",cls:"level-sat",emoji:"✅"};
+  return {label:"NO SATISFACTORIO",cls:"level-nosat",emoji:"⚠️"};
+}
+
+function onFiltersChange(){
+  const cargo = document.getElementById("f-cargo").value;
+  const mod   = document.getElementById("f-modalidad").value;
+  const el    = document.getElementById("preguntas-info");
+  const txt   = document.getElementById("preguntas-info-txt");
+  if(cargo && mod){
+    const n = buildQs(cargo, mod).length;
+    el.style.display = "flex";
+    txt.innerHTML = `Se asignarán <strong>${n} preguntas de conocimiento</strong> para <strong>${cargo}</strong> — modalidad <strong>${mod}</strong>.`;
+  } else {
+    el.style.display = "none";
+  }
+}
+
+// ============================================================
+//  INICIAR EVALUACIÓN: validar datos y armar pantalla desempeño
+// ============================================================
+function iniciarEvaluacion(){
+  const nombre  = document.getElementById("f-nombre").value.trim().toUpperCase();
+  const tipoDoc = document.getElementById("f-tipo-doc").value;
+  const doc     = document.getElementById("f-doc").value.trim();
+  const tel     = document.getElementById("f-telefono").value.trim();
+  const cargo   = document.getElementById("f-cargo").value;
+  const mod     = document.getElementById("f-modalidad").value;
+
+  if(!nombre||!tipoDoc||!doc||!tel||!cargo||!mod){
+    alert("Por favor completa todos los campos antes de continuar.");
+    return;
+  }
+  APP.nombre = nombre; APP.tipoDoc = tipoDoc; APP.doc = doc;
+  APP.telefono = tel; APP.cargo = cargo; APP.modalidad = mod;
+  APP.ratings = COMPETENCIAS.map(c => new Array(c.indicadores.length).fill(0));
+
+  construirBloques();
+  irA("s-desempeno");
+}
+
+// ============================================================
+//  CONSTRUIR BLOQUES DE COMPETENCIAS
+// ============================================================
+function construirBloques(){
+  const container = document.getElementById("comp-blocks");
+  container.innerHTML = "";
+  let globalIdx = 0;
+
+  COMPETENCIAS.forEach((comp, ci) => {
+    const block = document.createElement("div");
+    block.className = "comp-block";
+    block.id = "comp-block-"+ci;
+
+    const header = document.createElement("div");
+    header.className = "comp-header";
+    header.innerHTML = `
+      <span class="comp-emoji">${comp.emoji}</span>
+      <span class="comp-title">${comp.nombre}</span>
+      <span class="comp-score" id="comp-score-${ci}">0/${comp.max}</span>`;
+    block.appendChild(header);
+
+    const body = document.createElement("div");
+    body.className = "comp-body";
+
+    comp.indicadores.forEach((ind, ii) => {
+      const rowIdx = globalIdx;
+      const indNum = globalIdx + 1;
+      globalIdx++;
+
+      const row = document.createElement("div");
+      row.className = "ind-row";
+      row.id = `ind-row-${ci}-${ii}`;
+
+      const lkHtml = [1,2,3,4,5].map(v => `
+        <button class="lk-btn" data-ci="${ci}" data-ii="${ii}" data-val="${v}"
+          onclick="setRating(${ci},${ii},${v})" title="${LIKERT_LABELS[v]}">
+          <span>${v}</span>
+          <span class="lk-label">${LIKERT_LABELS[v].substring(0,3)}</span>
+        </button>`).join("");
+
+      row.innerHTML = `
+        <div class="ind-num">${indNum}</div>
+        <div class="ind-text">${ind}</div>
+        <div class="likert" id="likert-${ci}-${ii}">${lkHtml}</div>`;
+      body.appendChild(row);
+    });
+
+    block.appendChild(body);
+    container.appendChild(block);
+  });
+
+  actualizarScoreLive();
+}
+
+// ============================================================
+//  CALIFICAR UN INDICADOR
+// ============================================================
+function setRating(ci, ii, val){
+  APP.ratings[ci][ii] = val;
+
+  // Actualizar botones
+  const likert = document.getElementById(`likert-${ci}-${ii}`);
+  likert.querySelectorAll(".lk-btn").forEach(btn => {
+    const v = parseInt(btn.dataset.val);
+    btn.className = "lk-btn" + (v===val ? ` selected val-${val}` : "");
+  });
+
+  actualizarScoreLive();
+}
+
+function actualizarScoreLive(){
+  let total = 0, rated = 0;
+  COMPETENCIAS.forEach((comp, ci) => {
+    let compScore = 0;
+    comp.indicadores.forEach((_, ii) => {
+      const v = APP.ratings[ci][ii];
+      total += v;
+      if(v>0){ rated++; compScore += v; }
+    });
+    const maxScore = comp.indicadores.length * 5;
+    document.getElementById(`comp-score-${ci}`).textContent = `${compScore}/${maxScore}`;
+  });
+
+  const scoreEl = document.getElementById("live-score");
+  const levelEl = document.getElementById("live-level");
+  const ratedEl = document.getElementById("live-rated");
+  const totalInds = COMPETENCIAS.reduce((s,c)=>s+c.indicadores.length,0);
+
+  scoreEl.textContent = total;
+  ratedEl.textContent = `${rated} de ${totalInds}`;
+
+  if(rated === totalInds){
+    const niv = calcNivel(total);
+    levelEl.textContent = niv.label;
+    levelEl.className = "score-level " + niv.cls;
+  } else {
+    levelEl.textContent = rated===0 ? "Sin calificar" : `${totalInds-rated} sin calificar`;
+    levelEl.className = "score-level level-pending";
+  }
+}
+
+// ============================================================
+//  PASAR AL QUIZ DE CONOCIMIENTO
+// ============================================================
+function siguienteAQuiz(){
+  // Validar que todos estén calificados
+  const totalInds = COMPETENCIAS.reduce((s,c)=>s+c.indicadores.length,0);
+  let rated = 0;
+  COMPETENCIAS.forEach((comp,ci) => comp.indicadores.forEach((_,ii) => {
+    if(APP.ratings[ci][ii]>0) rated++;
+  }));
+
+  if(rated < totalInds){
+    document.getElementById("desempeno-warn").style.display = "flex";
+    // Scroll al primer sin calificar
+    let found = false;
+    COMPETENCIAS.forEach((comp,ci) => {
+      comp.indicadores.forEach((_,ii) => {
+        if(!found && APP.ratings[ci][ii]===0){
+          document.getElementById(`ind-row-${ci}-${ii}`).scrollIntoView({behavior:"smooth",block:"center"});
+          found = true;
+        }
+      });
+    });
+    return;
+  }
+
+  // Guardar resultado desempeño
+  let desempenoTotal = 0;
+  const compScores = {};
+  COMPETENCIAS.forEach((comp,ci) => {
+    let s = 0;
+    comp.indicadores.forEach((_,ii)=>{ s+=APP.ratings[ci][ii]; });
+    compScores[comp.id] = s;
+    desempenoTotal += s;
+  });
+  const niv = calcNivel(desempenoTotal);
+  APP.desempeno = { total:desempenoTotal, nivel:niv.label, compScores, fecha:new Date().toLocaleString("es-CO") };
+
+  // Preparar quiz
+  const qs = buildQs(APP.cargo, APP.modalidad);
+  if(!qs.length){
+    // Si no hay preguntas, saltar directo a resultados
+    APP.quiz = { total:0, ok:0, pct:0, nota:"N/A", mins:"0.0", detalle:[], fecha: APP.desempeno.fecha };
+    irA("s-enviando");
+    enviarASheets().finally(()=>{ mostrarResultados(); irA("s-resultados"); });
+    return;
+  }
+
+  APP.questions = qs;
+  APP.answers = new Array(qs.length).fill(null);
+  APP.currentQ = 0;
+  APP.t0 = Date.now();
+
+  mostrarPregunta(0);
+  irA("s-quiz");
+}
+
+// ============================================================
+//  CONSTRUIR PREGUNTAS DE CONOCIMIENTO (máx 4 comunes + 4 específicas = 8 total)
+// ============================================================
 function buildQs(cargo, modalidad){
   const qs = [];
-  const add = (arr, fuente) => arr && arr.forEach(q=>qs.push({...q,_f:fuente}));
+  // Agregar con límite por grupo
+  const addMax = (arr, fuente, max) => arr && arr.slice(0, max).forEach(q=>qs.push({...q,_f:fuente}));
 
-  // 1. Preguntas comunes a todos los cargos (aplican siempre)
   if(DATA.Ambos?.[cargo]){
-    add(DATA.Ambos[cargo].comunes, "Conocimiento general");
-    add(DATA.Ambos[cargo].especificas, "Específico del cargo");
+    addMax(DATA.Ambos[cargo].comunes,    "Conocimiento general",    4);
+    addMax(DATA.Ambos[cargo].especificas,"Específico del cargo",    2);
   }
-  // 2. Preguntas que aplican a EIH y EIC simultáneamente (clave "EIH/EIC")
   if(DATA["EIH/EIC"]?.[cargo]){
-    add(DATA["EIH/EIC"][cargo].especificas, "EIH y EIC");
+    addMax(DATA["EIH/EIC"][cargo].especificas, "EIH y EIC", 1);
   }
-
-  if(modalidad === "AMBOS"){
-    // 3a. Cuando el talento atiende AMBAS modalidades:
-    //     se incluyen las preguntas específicas de EIH + las de EIC
-    if(DATA.EIH?.[cargo]){
-      add(DATA.EIH[cargo].especificas, "EIH específico");
-    }
-    if(DATA.EIC?.[cargo]){
-      add(DATA.EIC[cargo].especificas, "EIC específico");
-    }
+  if(modalidad==="AMBOS"){
+    if(DATA.EIH?.[cargo]) addMax(DATA.EIH[cargo].especificas,"EIH específico",1);
+    if(DATA.EIC?.[cargo]) addMax(DATA.EIC[cargo].especificas,"EIC específico",1);
   } else {
-    // 3b. Modalidad individual (EIH o EIC)
-    if(DATA[modalidad]?.[cargo]){
-      add(DATA[modalidad][cargo].especificas, modalidad+" específico");
-    }
+    if(DATA[modalidad]?.[cargo]) addMax(DATA[modalidad][cargo].especificas, modalidad+" específico", 2);
   }
   return qs;
 }
 
-// ─────────────────────────────────────────────────────────────
-//  ACTUALIZAR INFO EN FORMULARIO
-// ─────────────────────────────────────────────────────────────
-function onFiltersChange(){
-  const cargo = document.getElementById("f-cargo").value;
-  const mod   = document.getElementById("f-modalidad").value;
-  const infoEl = document.getElementById("preguntas-info");
-  if(cargo && mod){
-    const n = buildQs(cargo, mod).length;
-    infoEl.style.display = "flex";
-    if(mod === "AMBOS"){
-      infoEl.className = "info-box";
-      const modLabel = "EIH y EIC (ambas modalidades)";
-      infoEl.innerHTML = `<span class="icon">ℹ️</span><span>Se asignarán <strong>${n} preguntas</strong> para el cargo <strong>${cargo}</strong>, incluyendo preguntas específicas de <strong>EIH y de EIC</strong>, ya que atiende ambas modalidades.</span>`;
-    } else {
-      infoEl.className = "info-box info-box-green";
-      infoEl.innerHTML = `<span class="icon">✅</span><span>Se asignarán <strong>${n} preguntas</strong> para el cargo <strong>${cargo}</strong> en la modalidad <strong>${mod}</strong>.</span>`;
-    }
-  } else {
-    infoEl.style.display = "none";
-  }
-}
-
-// ─────────────────────────────────────────────────────────────
-//  INICIAR QUIZ
-// ─────────────────────────────────────────────────────────────
-function iniciarQuiz(){
-  const nombre   = document.getElementById("f-nombre").value.trim().toUpperCase();
-  const tipoDoc  = document.getElementById("f-tipo-doc").value;
-  const doc      = document.getElementById("f-doc").value.trim().toUpperCase();
-  const telefono = document.getElementById("f-telefono").value.trim();
-  const cargo    = document.getElementById("f-cargo").value;
-  const mod      = document.getElementById("f-modalidad").value;
-
-  if(!nombre || !tipoDoc || !doc || !telefono || !cargo || !mod){
-    alert("Por favor completa todos los campos antes de continuar.");
-    return;
-  }
-  const qs = buildQs(cargo, mod);
-  if(!qs.length){
-    alert("No se encontraron preguntas para este cargo y modalidad.");
-    return;
-  }
-
-  APP = { nombre, tipoDoc, doc, telefono, cargo, modalidad:mod, questions:qs, idx:0, answers:{}, t0:Date.now(), timerRef:null };
-  
-  const timerEl = document.getElementById("timer");
-  timerEl.style.display = "block";
-  APP.timerRef = setInterval(()=>{
-    const s = Math.floor((Date.now()-APP.t0)/1000);
-    timerEl.textContent = "⏱ "+String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
-  }, 1000);
-  
-  showScreen("s-quiz");
-  renderQ(0);
-}
-
-// ─────────────────────────────────────────────────────────────
-//  RENDERIZAR PREGUNTA
-// ─────────────────────────────────────────────────────────────
-function renderQ(idx){
+// ============================================================
+//  MOSTRAR PREGUNTA DEL QUIZ
+// ============================================================
+function mostrarPregunta(idx){
   const q = APP.questions[idx];
   const total = APP.questions.length;
-  const pct = Math.round(((idx+1)/total)*100);
-  
+  const pct = Math.round(((idx)/total)*100);
+
   document.getElementById("prog-txt").textContent = `Pregunta ${idx+1} de ${total}`;
-  document.getElementById("prog-pct").textContent = pct+"%";
-  document.getElementById("prog-fill").style.width = pct+"%";
-  document.getElementById("q-topic").innerHTML = "📌 "+q.tema;
-  document.getElementById("q-text").textContent = q.pregunta;
-  
+  document.getElementById("prog-pct").textContent  = pct+"%";
+  document.getElementById("prog-fill").style.width  = pct+"%";
+  document.getElementById("q-topic").textContent   = "📌 "+q._f+" · "+q.tema;
+  document.getElementById("q-text").textContent    = q.pregunta;
+  document.getElementById("q-feedback").style.display = "none";
+
   const optsEl = document.getElementById("opts");
   optsEl.innerHTML = "";
-  ["A","B","C","D"].forEach(l=>{
-    const txt = q["opcion_"+l];
+  ["A","B","C","D"].forEach(letter => {
+    const txt = q["opcion_"+letter];
     if(!txt) return;
-    const d = document.createElement("div");
-    d.className = "opt" + (APP.answers[idx]===l?" selected":"");
-    d.dataset.l = l;
-    d.onclick = ()=>selectOpt(l);
-    d.innerHTML = `<div class="opt-letter">${l}</div><div class="opt-text">${txt}</div>`;
-    optsEl.appendChild(d);
+    const div = document.createElement("div");
+    div.className = "opt" + (APP.answers[idx]===letter?" selected":"");
+    div.onclick = () => seleccionar(idx, letter);
+    div.innerHTML = `<div class="opt-letter">${letter}</div><div class="opt-text">${txt}</div>`;
+    optsEl.appendChild(div);
   });
-  
+
   const actEl = document.getElementById("q-actions");
-  const btnEl = document.getElementById("btn-next");
-  if(APP.answers[idx]!==undefined){
-    actEl.style.display = "flex";
-    btnEl.textContent = idx===total-1 ? "✅ Ver Resultados" : "Siguiente →";
+  actEl.style.display = APP.answers[idx] ? "flex" : "none";
+}
+
+function seleccionar(idx, letter){
+  if(APP.answers[idx]!==null) return; // ya respondida
+  APP.answers[idx] = letter;
+  const q = APP.questions[idx];
+  const correcta = q.respuesta_correcta;
+  const ok = letter === correcta;
+
+  // Mostrar feedback visual
+  document.querySelectorAll("#opts .opt").forEach(opt=>{
+    const l = opt.querySelector(".opt-letter").textContent;
+    opt.style.pointerEvents = "none";
+    if(l===letter && ok) opt.className = "opt correct";
+    else if(l===letter && !ok) opt.className = "opt wrong";
+    else if(l===correcta) opt.className = "opt correct";
+  });
+
+  const fb = document.getElementById("q-feedback");
+  fb.style.display = "block";
+  if(ok){
+    fb.className = "q-feedback ok";
+    fb.textContent = "✅ ¡Correcto!";
   } else {
-    actEl.style.display = "none";
+    fb.className = "q-feedback no";
+    fb.textContent = `❌ Incorrecto. La respuesta correcta es: ${correcta}) ${q["opcion_"+correcta]}`;
   }
-  
-  const wrap = document.getElementById("q-wrap");
-  wrap.classList.remove("q-animate");
-  void wrap.offsetWidth;
-  wrap.classList.add("q-animate");
+
+  document.getElementById("q-actions").style.display = "flex";
 }
 
-// ─────────────────────────────────────────────────────────────
-//  SELECCIONAR OPCIÓN
-// ─────────────────────────────────────────────────────────────
-function selectOpt(l){
-  APP.answers[APP.idx] = l;
-  document.querySelectorAll(".opt").forEach(o=>{
-    o.classList.toggle("selected", o.dataset.l===l);
-  });
-  const actEl = document.getElementById("q-actions");
-  const btnEl = document.getElementById("btn-next");
-  actEl.style.display = "flex";
-  btnEl.textContent = APP.idx===APP.questions.length-1 ? "✅ Ver Resultados" : "Siguiente →";
-}
-
-// ─────────────────────────────────────────────────────────────
-//  SIGUIENTE PREGUNTA
-// ─────────────────────────────────────────────────────────────
 function siguientePregunta(){
-  if(APP.answers[APP.idx]===undefined) return;
-  if(APP.idx < APP.questions.length-1){
-    APP.idx++;
-    document.getElementById("q-actions").style.display = "none";
-    renderQ(APP.idx);
+  const idx = APP.currentQ;
+  if(APP.answers[idx]===null) return;
+
+  if(idx+1 < APP.questions.length){
+    APP.currentQ++;
+    mostrarPregunta(APP.currentQ);
   } else {
+    // Quiz terminado
     finalizarQuiz();
   }
 }
 
-// ─────────────────────────────────────────────────────────────
-//  SONIDO DE FINALIZACIÓN
-// ─────────────────────────────────────────────────────────────
-function reproducirSonido(){
-  try {
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-
-    oscillator.frequency.value = 800;
-    oscillator.type = 'sine';
-
-    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-
-    oscillator.start(audioContext.currentTime);
-    oscillator.stop(audioContext.currentTime + 0.5);
-  } catch(e) {
-    console.log("Audio no disponible");
-  }
-}
-
-//  FINALIZAR
-// ─────────────────────────────────────────────────────────────
+// ============================================================
+//  FINALIZAR QUIZ Y MOSTRAR RESULTADOS
+// ============================================================
 function finalizarQuiz(){
-  clearInterval(APP.timerRef);
-  document.getElementById("timer").style.display = "none";
-  reproducirSonido();
-  showScreen("s-enviando");
-  const result = calcularResultado();
-  enviarASheets(result).finally(()=> mostrarResultados(result));
-}
-
-function calcularResultado(){
   let ok = 0;
   const detalle = APP.questions.map((q,i)=>{
     const ua = APP.answers[i]||"";
@@ -589,105 +895,165 @@ function calcularResultado(){
     return { num:i+1, tema:q.tema, pregunta:q.pregunta,
       ua, uc:q.respuesta_correcta,
       txtUsr:q["opcion_"+ua]||"Sin respuesta",
-      txtCor:q["opcion_"+q.respuesta_correcta],
-      correcto };
+      txtCor:q["opcion_"+q.respuesta_correcta], correcto };
   });
   const total = APP.questions.length;
   const pct   = Math.round((ok/total)*100);
   const nota  = ((ok/total)*5).toFixed(2);
   const mins  = ((Date.now()-APP.t0)/60000).toFixed(1);
-  return { nombre:APP.nombre, tipoDoc:APP.tipoDoc, doc:APP.doc, telefono:APP.telefono,
-    cargo:APP.cargo, modalidad:APP.modalidad,
-    total, ok, mal:total-ok, pct, nota, mins,
-    fecha:new Date().toLocaleString("es-CO"), detalle };
+  APP.quiz = { total, ok, mal:total-ok, pct, nota, mins, detalle, fecha:new Date().toLocaleString("es-CO") };
+
+  irA("s-enviando");
+  enviarASheets().finally(()=>{ mostrarResultados(); irA("s-resultados"); });
 }
 
-// ─────────────────────────────────────────────────────────────
+// ============================================================
+//  MOSTRAR RESULTADOS
+// ============================================================
+function mostrarResultados(){
+  const d = APP.desempeno;
+  const q = APP.quiz;
+  const niv = calcNivel(d.total);
+
+  document.getElementById("res-emoji").textContent = niv.emoji;
+  document.getElementById("res-nombre").textContent = APP.nombre;
+  document.getElementById("res-cargo").textContent  = APP.cargo + " · " + APP.modalidad;
+  document.getElementById("res-fecha").textContent  = d.fecha;
+
+  document.getElementById("res-desempeno-pts").textContent = d.total;
+  const nb = document.getElementById("res-nivel-badge");
+  nb.textContent = niv.label;
+  nb.style.background = niv.cls==="level-sobre"?"#1B5E20":niv.cls==="level-sat"?"#F7A800":"#E53935";
+
+  document.getElementById("res-nota").textContent     = q.nota;
+  document.getElementById("res-correctas-txt").textContent = `${q.ok} de ${q.total} correctas`;
+  document.getElementById("res-pct").textContent      = q.pct+"%";
+
+  // Barras por competencia
+  const listEl = document.getElementById("comp-result-list");
+  listEl.innerHTML = "";
+  COMPETENCIAS.forEach(comp=>{
+    const sc   = d.compScores[comp.id]||0;
+    const maxSc= comp.indicadores.length*5;
+    const pct  = Math.round((sc/maxSc)*100);
+    const row  = document.createElement("div");
+    row.className="comp-result-row";
+    row.innerHTML=`
+      <div class="cr-name">${comp.emoji} ${comp.nombre}</div>
+      <div class="cr-bar-wrap"><div class="cr-bar" style="width:${pct}%"></div></div>
+      <div class="cr-val">${sc}/${maxSc}</div>`;
+    listEl.appendChild(row);
+  });
+
+  // Detalle quiz
+  const tbody = document.getElementById("detalle-body");
+  tbody.innerHTML = "";
+  if(q.detalle && q.detalle.length){
+    q.detalle.forEach(item=>{
+      const tr=document.createElement("tr");
+      tr.innerHTML=`<td>${item.num}</td><td>${item.tema}</td>
+        <td>${item.ua}) ${item.txtUsr}</td>
+        <td class="${item.correcto?"tag-ok":"tag-no"}">${item.correcto?"✅ Correcta":"❌ Incorrecta"}</td>`;
+      tbody.appendChild(tr);
+    });
+  } else {
+    tbody.innerHTML="<tr><td colspan='4' style='text-align:center;color:#999'>Sin preguntas de conocimiento</td></tr>";
+  }
+}
+
+// ============================================================
 //  ENVIAR A GOOGLE SHEETS
-// ─────────────────────────────────────────────────────────────
-async function enviarASheets(r){
-  if(!SHEET_URL||SHEET_URL==="TU_URL_AQUI") return;
+// ============================================================
+async function enviarASheets(){
+  if(!SHEET_URL||SHEET_URL==="TU_URL_AQUI"){
+    console.log("SHEET_URL no configurada — omitiendo envío.");
+    return;
+  }
+  const d = APP.desempeno;
+  const q = APP.quiz;
+  const payload = {
+    fecha:           d.fecha,
+    nombre:          APP.nombre,
+    tipo_documento:  APP.tipoDoc,
+    documento:       APP.doc,
+    telefono:        APP.telefono,
+    cargo:           APP.cargo,
+    modalidad:       APP.modalidad,
+    evaluador:       "Coordinadora",
+    // Desempeño
+    desempeno_total: d.total,
+    desempeno_nivel: d.nivel,
+    adaptabilidad:   d.compScores.adaptabilidad||0,
+    compromiso:      d.compScores.compromiso||0,
+    resolucion:      d.compScores.resolucion||0,
+    formacion:       d.compScores.formacion||0,
+    relaciones:      d.compScores.relaciones||0,
+    equipo:          d.compScores.equipo||0,
+    // Conocimiento
+    quiz_total:      q.total,
+    quiz_correctas:  q.ok,
+    quiz_porcentaje: q.pct,
+    quiz_nota:       q.nota,
+    quiz_tiempo_min: q.mins,
+    // Detalle quiz
+    detalle_respuestas: (q.detalle||[]).map(item=>({
+      num: item.num, tema: item.tema, pregunta: item.pregunta,
+      respuesta_usuario: item.ua+") "+item.txtUsr,
+      respuesta_correcta: item.uc+") "+item.txtCor,
+      resultado: item.correcto?"CORRECTA":"INCORRECTA"
+    }))
+  };
+
   try{
-    // Construir detalle de cada respuesta
-    const detalle_respuestas = r.detalle.map(item => ({
-      num: item.num,
-      tema: item.tema,
-      pregunta: item.pregunta,
-      respuesta_usuario: item.ua + ") " + item.txtUsr,
-      respuesta_correcta: item.uc + ") " + item.txtCor,
-      resultado: item.correcto ? "CORRECTA" : "INCORRECTA"
-    }));
     await fetch(SHEET_URL,{
       method:"POST", mode:"no-cors",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({
-        nombre:r.nombre, tipo_documento:r.tipoDoc, documento:r.doc,
-        telefono:r.telefono, cargo:r.cargo, modalidad:r.modalidad,
-        total:r.total, correctas:r.ok, porcentaje:r.pct, nota:r.nota,
-        tiempo_min:r.mins, fecha:r.fecha,
-        detalle_respuestas: detalle_respuestas
-      })
+      body:JSON.stringify(payload)
     });
-  }catch(e){ console.warn("Sheets error",e); }
+  } catch(e){
+    console.warn("Error enviando a Sheets:",e);
+  }
 }
 
-// ─────────────────────────────────────────────────────────────
-//  MOSTRAR RESULTADOS
-// ─────────────────────────────────────────────────────────────
-function mostrarResultados(r){
-  showScreen("s-resultados");
-  
-  document.getElementById("res-persona").textContent =
-    r.nombre+" · "+r.cargo+" · "+r.modalidad;
-  document.getElementById("res-nota").textContent = r.nota;
-  
-  // Arco SVG animado
-  const circ = 2*Math.PI*72;
-  const offset = circ*(1-r.pct/100);
-  const arc = document.getElementById("score-arc");
-  arc.style.strokeDashoffset = circ;
-  setTimeout(()=>{ arc.style.transition="stroke-dashoffset 1.2s ease"; arc.style.strokeDashoffset=offset; },200);
-  
-  // Stats
-  document.getElementById("res-correctas").textContent = r.ok;
-  document.getElementById("res-incorrectas").textContent = r.mal;
-  document.getElementById("res-tiempo").textContent = r.mins;
-  
-  // Badge
-  const badge = document.getElementById("res-badge");
-  const n = parseFloat(r.nota);
-  if(n>=4.5){ badge.className="result-badge badge-excelente"; badge.textContent="🏆 Desempeño Excelente · ¡Felicitaciones!"; }
-  else if(n>=3.5){ badge.className="result-badge badge-bien"; badge.textContent="👍 Buen Desempeño · ¡Sigue adelante!"; }
-  else if(n>=3.0){ badge.className="result-badge badge-basico"; badge.textContent="📚 Desempeño Básico · Refuerza los temas débiles"; }
-  else{ badge.className="result-badge badge-bajo"; badge.textContent="⚠️ Desempeño Bajo · Se requiere profundización"; }
-  
-  // Status Sheets
-  const msg = document.getElementById("sheets-msg");
-  if(SHEET_URL&&SHEET_URL!=="TU_URL_AQUI"){
-    msg.style.background="#E8F5E9"; msg.style.color="#1B5E20";
-    msg.textContent="✅ Resultados registrados en Google Sheets";
-  } else {
-    msg.style.background="#FFF8E1"; msg.style.color="#E65100";
-    msg.textContent="⚠️ Modo local: configura SHEET_URL para registrar automáticamente";
+// ============================================================
+//  GUARDAR Y FINALIZAR (con observaciones)
+// ============================================================
+async function guardarYFinalizar(){
+  const obs = document.getElementById("obs-text").value.trim();
+  if(obs && SHEET_URL && SHEET_URL!=="TU_URL_AQUI"){
+    try{
+      await fetch(SHEET_URL,{
+        method:"POST",mode:"no-cors",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          accion:"observaciones",
+          documento: APP.doc,
+          nombre: APP.nombre,
+          observaciones: obs,
+          fecha: APP.desempeno.fecha
+        })
+      });
+    }catch(e){}
   }
-  
-  // Revisión
-  const list = document.getElementById("review-list");
-  list.innerHTML = "";
-  r.detalle.forEach(item=>{
-    const d = document.createElement("div");
-    d.className = "review-item "+(item.correcto?"ok":"fail");
-    d.innerHTML = `
-      <div class="review-q">
-        <span class="tag ${item.correcto?"tag-ok":"tag-fail"}">${item.correcto?"✓ Correcta":"✗ Incorrecta"}</span>
-        ${item.num}. ${item.pregunta}
-      </div>
-      <div class="review-a">
-        <strong>Tu respuesta (${item.ua}):</strong> ${item.txtUsr}
-        ${!item.correcto?`<br><strong style="color:#009B3A">Correcta (${item.uc}):</strong> ${item.txtCor}`:""}
-      </div>`;
-    list.appendChild(d);
-  });
+
+  const st = document.getElementById("sheets-status");
+  st.style.display="flex";
+  if(!SHEET_URL||SHEET_URL==="TU_URL_AQUI"){
+    document.getElementById("sheets-status-txt").textContent = "⚠️ Recuerda configurar la URL de Google Sheets en el archivo HTML (busca: https://script.google.com/macros/s/AKfycbzxSyJXAupbL0UX7Sdt3FYA6xv4VW-SmpshWAFW5FcDXMpY-2CfdXNDugW-OK5uoNQf/exec).";
+  } else {
+    st.className="alert alert-green";
+    document.getElementById("sheets-status-txt").innerHTML = "✅ Evaluación registrada correctamente en Google Sheets.";
+  }
+
+  document.getElementById("btn-detalle").scrollIntoView({behavior:"smooth"});
+}
+
+function toggleDetalle(){
+  const el = document.getElementById("detalle-wrap");
+  const btn = document.getElementById("btn-detalle");
+  const visible = el.style.display==="block";
+  el.style.display = visible?"none":"block";
+  btn.textContent = visible?"Ver detalle de respuestas ▼":"Ocultar detalle ▲";
 }
 </script>
 </body>
